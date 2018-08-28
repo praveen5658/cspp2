@@ -7,10 +7,6 @@
     * Importing Scanner Class.
 */
 import java.util.Scanner;
-/**
- * { Importing Math class }.
- */
-import java.lang.*;
 /**This is Solution.*/
 public final class Solution {
 /**Calling Constructor.*/
