@@ -17,10 +17,10 @@ public final class Solution {
     @param args
     Main .*/
     public static void main(final String[] args) {
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);      
         int base = s.nextInt();
         int exponent = s.nextInt();
-        long result=power(base,exponent);
+        long result = power(base, exponent);
         System.out.println(result);
     }
     /**
@@ -32,11 +32,11 @@ public final class Solution {
      * @return     { power value as double }
      */
     public static long power(final int base, final int exponent) {
-    	final int num = 1;
-    	if (exponent == 0) {
-    		return num;
-    	} else {
-    		return base * power(base, exponent - 1);
-    	}
+        final int num = 1;
+        if (exponent == 0) {
+            return num;
+        } else {
+            return base * power(base, exponent - 1);
+        }
     }
 }
