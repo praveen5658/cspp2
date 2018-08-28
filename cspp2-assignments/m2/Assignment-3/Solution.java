@@ -40,6 +40,3 @@ public final class Solution {
         }
     }
 }
-
-
-
