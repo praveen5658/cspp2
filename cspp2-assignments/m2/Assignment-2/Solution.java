@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * { Importing Math class }.
  */
-import java.lang.Math.*;
+import java.lang.Math;
 /**This is Solution.*/
 public final class Solution {
 /**Calling Constructor.*/
