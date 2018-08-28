@@ -39,9 +39,9 @@ public final class Solution {
         final int num = 4;
         final int num1 = 2;
         double result1 = (-b + Math.sqrt((b * b) - num * a * c))
-            /(num1 * a);
+            / (num1 * a);
         double result2 = (-b - Math.sqrt((b * b) - num * a * c))
-            /(num1 * a);
+            / (num1 * a);
         System.out.println(result1 + " " + result2);
     }
 }
