@@ -42,7 +42,6 @@ public final class Solution {
     		/(num1 * a);
     	double result2 = (- b - Math.sqrt((b * b) - num * a * c))
     		/(num1 * a);
-    	System.out.print(result1);
-    	System.out.print(result2);
+    	System.out.println(result1 + " " + result2);
     }
 }
