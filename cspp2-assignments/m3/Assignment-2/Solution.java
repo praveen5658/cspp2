@@ -9,7 +9,7 @@
 import java.util.Scanner;
 /**This is Solution class.*/
 public final class Solution {
-/* Fill the main function to print the number of 7's between 1 to n*/
+/** Fill the main function to print the number of 7's between 1 to n*/
     private Solution() {
         super();
     }
@@ -24,14 +24,15 @@ public final class Solution {
         final int seven = 7;
         int count = 0;
         for (int loop = 1; loop <= num; loop++) {
-        	int number = loop;
-        	while (number != zero) {
-        		if (number % ten == seven) {
-        			count += 1;
-        		}
-        		number /= ten;
-        	}
+            int number = loop;
+            while (number != zero) {
+                if (number % ten == seven) {
+                    count += 1;
+                }
+                number /= ten;
+            }
         }
         System.out.println(count);
     }
 }
+
