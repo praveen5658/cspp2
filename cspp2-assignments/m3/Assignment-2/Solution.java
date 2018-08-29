@@ -9,7 +9,7 @@
 import java.util.Scanner;
 /**This is Solution class.*/
 public final class Solution {
-/** Fill the main function to print the number of 7's between 1 to n*/
+/** Fill the main function to print the number of 7's between 1 to n.*/
     private Solution() {
         super();
     }
