@@ -20,7 +20,7 @@ public final class Solution {
         Scanner s = new Scanner(System.in);      
         int n1 = s.nextInt();
         int n2 = s.nextInt();
-        int number = gcd(n1,n2);
+        int number = gcd(n1, n2);
         System.out.println(number);
     }
     /**
@@ -31,15 +31,13 @@ public final class Solution {
      *
      * @return     { int as GCD }.
      */
-    public static int gcd(int n1, int n2) {
+    public static int gcd(final int n1, final int n2) {
         final int zero = 0;
         if (n1 % n2 == zero) {
             return n2;
-        }
-        else if (n2 % n1 == zero) {
+        } else if (n2 % n1 == zero) {
             return n1;
-        }
-        else {
+        } else {
             int num1 = Math.min(n1, n2);
             int num2 = Math.max(n1, n2);
             return gcd(num1, num2 % num1);
