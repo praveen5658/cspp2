@@ -34,6 +34,7 @@ public final class Solution {
         if (m1 == m1 && n1 == n2) {
             int[][] arr2 = readinput(m2, n2);
             int[][] farr = Addition(arr1, arr2, m1, n1);
+            printing(farr, m1, n1);
         } else {
             System.out.println("not possible");
         }
@@ -64,7 +65,7 @@ public final class Solution {
             for (int j = 0; j < n1; j++) {
                 System.out.print(farr[i][j] + " ");
             }
-            System.out.print("");
+            System.out.print("\n");
         }
     }
 }
