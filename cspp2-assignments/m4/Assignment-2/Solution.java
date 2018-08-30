@@ -38,6 +38,14 @@ public final class Solution {
             System.out.println("not possible");
         }
     }
+    /**
+     * { For reading input }.
+     *
+     * @param      m1    The m 1
+     * @param      n1    The n 1
+     *
+     * @return     { array }.
+     */
     public static int[][] readinput(final int m1, final int n1) {
         int[][] arr = new int[m1][n1];
         for (int i = 0; i < m1; i++) {
@@ -49,6 +57,16 @@ public final class Solution {
         }
         return arr;
     }
+    /**
+     * { Addition }.
+     *
+     * @param      arr1  The arr 1
+     * @param      arr2  The arr 2
+     * @param      m1    The m 1
+     * @param      n1    The n 1
+     *
+     * @return     { array }.
+     */
     public static int[][] Addition(int[][] arr1, int[][] arr2, final int m1, final int n1) {
         int[][] farr = new int[m1][n1];
         for (int i = 0; i < m1; i++) {
@@ -58,6 +76,13 @@ public final class Solution {
         }
         return farr;
     }
+    /**
+     * { Printing }.
+     *
+     * @param      farr  The farr
+     * @param      m1    The m 1
+     * @param      n1    The n 1
+     */
     public static void printing(int[][] farr, final int m1, final int n1) {
         for (int i = 0; i < m1; i++) {
             for (int j = 0; j < n1 - 1; j++) {
