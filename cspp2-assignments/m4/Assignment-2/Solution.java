@@ -20,7 +20,7 @@ public final class Solution {
     /**
     @param args
     Main .*/
-    static Scanner sc = new Scanner(System.in); 
+    static Scanner sc = new Scanner(System.in);
     public static void main(final String[] args) {
         String str1 = sc.nextLine();
         String[] firstinput = str1.split(" ", 2);
