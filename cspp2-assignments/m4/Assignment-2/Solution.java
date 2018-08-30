@@ -20,8 +20,8 @@ public final class Solution {
     /**
     @param args
     Main .*/
+    static Scanner sc = new Scanner(System.in); 
     public static void main(final String[] args) {
-        Scanner sc = new Scanner(System.in);
         String str1 = sc.nextLine();
         String[] firstinput = str1.split(" ", 2);
         int m1 = Integer.parseInt(firstinput[0]);
@@ -41,7 +41,6 @@ public final class Solution {
     }
     public static int[][] readinput(final int m1, final int n1) {
         int[][] arr = new int[m1][n1];
-        Scanner sc = new Scanner(System.in);
         for (int i = 0; i < m1; i++) {
             String st = sc.nextLine();
             String[] firstinput = st.split(" ", n1);
