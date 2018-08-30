@@ -60,10 +60,11 @@ public final class Solution {
         return farr;
     }
     public static void printing(int[][] farr, final int m1, final int n1) {
-        for (int i = 0; i < m1; i++) {
+        for (int i = 0; i < m1 - 1; i++) {
             for (int j = 0; j < n1; j++) {
                 System.out.print(farr[i][j] + " ");
             }
+            System.out.print(farr[i][n1 - 1]);
             System.out.print("\n");
         }
     }
