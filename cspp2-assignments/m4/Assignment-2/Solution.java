@@ -4,10 +4,6 @@
     * Array Addition of Matrices
 */
 /**
- * { Importing Arrays class }.
- */
-import java.util.Arrays;
-/**
     * Importing Scanner Class.
 */
 import java.util.Scanner;
@@ -20,7 +16,7 @@ public final class Solution {
     /**
     @param args
     Main .*/
-    static Scanner sc = new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
     public static void main(final String[] args) {
         String str1 = sc.nextLine();
         String[] firstinput = str1.split(" ", 2);
