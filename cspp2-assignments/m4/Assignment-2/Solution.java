@@ -14,9 +14,12 @@ public final class Solution {
         super();
     }
     /**
+     * {Scanner}.
+     */
+    private static Scanner sc = new Scanner(System.in);
+    /**
     @param args
     Main .*/
-    private static Scanner sc = new Scanner(System.in);
     public static void main(final String[] args) {
         String str1 = sc.nextLine();
         String[] firstinput = str1.split(" ", 2);
