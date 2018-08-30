@@ -1,7 +1,7 @@
 /**
     * Autor : Praveen
     * Date : 30-08-2018
-    * Array Addition of Matrices
+    * Array addition of Matrices
 */
 /**
     * Importing Scanner Class.
@@ -32,7 +32,7 @@ public final class Solution {
         int n2 = Integer.parseInt(firstinput1[1]);
         if (m1 == m1 && n1 == n2) {
             int[][] arr2 = readinput(m2, n2);
-            int[][] farr = Addition(arr1, arr2, m1, n1);
+            int[][] farr = addition(arr1, arr2, m1, n1);
             printing(farr, m1, n1);
         } else {
             System.out.println("not possible");
@@ -58,7 +58,7 @@ public final class Solution {
         return arr;
     }
     /**
-     * { Addition }.
+     * { addition }.
      *
      * @param      arr1  The arr 1
      * @param      arr2  The arr 2
@@ -67,7 +67,8 @@ public final class Solution {
      *
      * @return     { array }.
      */
-    public static int[][] Addition(int[][] arr1, int[][] arr2, final int m1, final int n1) {
+    public static int[][] addition(final int[][] arr1,
+        final int[][] arr2, final int m1, final int n1) {
         int[][] farr = new int[m1][n1];
         for (int i = 0; i < m1; i++) {
             for (int j = 0; j < n1; j++) {
@@ -83,7 +84,8 @@ public final class Solution {
      * @param      m1    The m 1
      * @param      n1    The n 1
      */
-    public static void printing(int[][] farr, final int m1, final int n1) {
+    public static void printing(final int[][] farr, final int m1,
+        final int n1) {
         for (int i = 0; i < m1; i++) {
             for (int j = 0; j < n1 - 1; j++) {
                 System.out.print(farr[i][j] + " ");
