@@ -37,8 +37,8 @@ public final class Solution {
         int sumvalue = 0;
         int j = 0;
         for (int i = len - 1; i >= 0; i--) {
-            sumvalue += Character.getNumericValue(s.charAt(i)) *
-                (Math.pow(2, j));
+            sumvalue += Character.getNumericValue(s.charAt(i))
+            * (Math.pow(2, j));
             j++;
         }
         return sumvalue;
