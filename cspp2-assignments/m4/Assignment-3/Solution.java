@@ -26,11 +26,11 @@ public final class Solution {
         }
     }
     /**
-     * { function_description }.
+     * { Converts Binary to Decimal }.
      *
-     * @param      s     { parameter_description }
+     * @param      s     { String }
      *
-     * @return     { description_of_the_return_value }.
+     * @return     { long value }.
      */
     public static long binaryToDecimal(final String s) {
         int len = s.length();
