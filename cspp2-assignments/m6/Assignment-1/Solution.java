@@ -44,9 +44,10 @@ public final class Solution {
         for (int i = 2; i < n; i++) {
             boolean value = isprime(i);
             if (value) {
-                if (i % two != zero) {
-                    System.out.println(i);
-                }
+                // if (i % two != zero) {
+                //     System.out.println(i);
+                // }
+                System.out.println(i);
             }
         }
     }
