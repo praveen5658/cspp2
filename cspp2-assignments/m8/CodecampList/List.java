@@ -142,7 +142,7 @@ public class List {
         // Think about what to do to the size variable.
         int[] sample = new int[10];
         for (int i = 0, j = 0; i < 10; i++, j++) {
-            if (i == index) {
+            if (i == index - 1) {
                 i += 1;
                 sample[j] = array[i];
             } else {
