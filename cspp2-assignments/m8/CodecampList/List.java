@@ -150,7 +150,7 @@ public class List {
         if (index <= 9) {
             int[] sample = new int[10];
             for (int i = 0, j = 0; i < 10; i++, j++) {
-                if (i == index - 1) {
+                if (i == index) {
                     i += 1;
                     sample[j] = array[i];
                 } else {
