@@ -194,7 +194,9 @@ public class List {
      */
     public String toString() {
         // Replace the code below
-        return Arrays.toString(array);
+        int[] samplearray = new int[size];
+        System.arraycopy(array, 0, samplearray, 0, size);
+        return Arrays.toString(samplearray);
     }
 
     /*
