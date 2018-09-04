@@ -162,9 +162,11 @@ public class List {
     public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        if (index <= 9) {
-            int[] sample = new int[10];
-            for (int i = 0, j = 0; i < 10; i++, j++) {
+        final int nine = 9;
+        final int ten = 10;
+        if (index <= nine) {
+            int[] sample = new int[ten];
+            for (int i = 0, j = 0; i < ten; i++, j++) {
                 if (i == index) {
                     i += 1;
                     sample[j] = array[i];
@@ -248,9 +250,10 @@ public class List {
      *
      * @return     { boolean value }.
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
-        for (int i = 0; i < 10; i++) {
+        final int ten = 10;
+        for (int i = 0; i < ten; i++) {
             if (array[i] == item) {
                 return true;
             }
@@ -272,7 +275,8 @@ public class List {
      */
     public int indexOf(final int item) {
         // Replace the code below
-        for (int i = 0; i < 10; i++) {
+        final int ten = 10;
+        for (int i = 0; i < ten; i++) {
             if (array[i] == item) {
                 return i;
             }
@@ -324,6 +328,9 @@ public class List {
                 break;
             case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
+                break;
+            default:
+                System.out.println("Default");
                 break;
             }
         }
