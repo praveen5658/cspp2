@@ -140,17 +140,21 @@ public class List {
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        int[] sample = new int[10];
-        for (int i = 0, j = 0; i < 10; i++, j++) {
-            if (i == index - 1) {
-                i += 1;
-                sample[j] = array[i];
-            } else {
-                sample[j] = array[i];
+        if (index <= 9) {
+            int[] sample = new int[10];
+            for (int i = 0, j = 0; i < 10; i++, j++) {
+                if (i == index - 1) {
+                    i += 1;
+                    sample[j] = array[i];
+                } else {
+                    sample[j] = array[i];
+                }
             }
+            array = sample.clone();
+            size -= 1;
+        } else {
+            System.out.println("Invalid Position Exception");
         }
-        array = sample.clone();
-        size -= 1;
     }
 
     /*
