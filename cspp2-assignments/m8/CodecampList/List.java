@@ -150,6 +150,7 @@ public class List {
             }
         }
         array = sample.clone();
+        size -= 1;
     }
 
     /*
