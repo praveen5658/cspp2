@@ -95,7 +95,7 @@ public class List {
         size = 0;
     }
 
-    /**
+    /*
      * The add method does what the name suggests.
      * Add an int item to the list.
      * The assumption is to store the item at the end of the list
@@ -106,7 +106,12 @@ public class List {
      *
      * The method returns void (nothing)
      */
-    public void add(int item) {
+    /**
+     * { for adding }.
+     *
+     * @param      item  The item
+     */
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         array[size] = item;
         size += 1;
@@ -118,6 +123,11 @@ public class List {
      * to the objects outside the list
      *
      * The method returns an int. Empty list should return 0.
+     */
+    /**
+     * { size }.
+     *
+     * @return     { int }.
      */
     public int size() {
         // replace the code below to implement the size method
@@ -144,7 +154,12 @@ public class List {
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
      */
-    public void remove(int index) {
+    /**
+     * { removes element from list }.
+     *
+     * @param      index  The index
+     */
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index <= 9) {
@@ -175,7 +190,12 @@ public class List {
      * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
      */
-    public void get(int index) {
+    /**
+     * { get the element }.
+     *
+     * @param      index  The index
+     */
+    public void get(final int index) {
         // Replace the code below to write the code for get
         final int zero = 0;
         if (array[index] != zero) {
@@ -203,6 +223,11 @@ public class List {
      * not all the elements of the array.
      *
      */
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         // Replace the code below
         int[] samplearray = new int[size];
@@ -215,6 +240,13 @@ public class List {
      * the item passed as an argument to the method
      * So, iterate through the list and return true if
      * the item exists and otherwise false
+     */
+    /**
+     * { Tells whether given item present or not }.
+     *
+     * @param      item  The item
+     *
+     * @return     { boolean value }.
      */
     public boolean contains(int item) {
         // Replace the code below
@@ -231,7 +263,14 @@ public class List {
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
-    public int indexOf(int item) {
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { integer }.
+     */
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < 10; i++) {
             if (array[i] == item) {
@@ -240,8 +279,12 @@ public class List {
         }
         return -1;
     }
-
-    public static void main(String[] args) {
+    /**
+     * { main function }.
+     *
+     * @param      args  The arguments.
+     */
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
