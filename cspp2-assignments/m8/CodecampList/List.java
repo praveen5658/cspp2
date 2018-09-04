@@ -197,7 +197,7 @@ public class List {
         // Replace the code below
         int[] samplearray = new int[size];
         System.arraycopy(array, 0, samplearray, 0, size);
-        return Arrays.toString(samplearray);
+        return (Arrays.toString(samplearray)).replace(" ", "");
     }
 
     /*
