@@ -16,7 +16,9 @@ import java.util.Scanner;
  * by invoking the add method provided in the List ADT.
  *
  */
-
+/**
+ * Class for fibonacci.
+ */
 public class Fibonacci {
     /*
      * fib is a static method takes a argument n
@@ -25,7 +27,14 @@ public class Fibonacci {
      *
      * Look for the hint.txt if some of the testcases fail.
      */
-    public static List fib(int n) {
+    /**
+     * { Prints Fibonacci Series }.
+     *
+     * @param      n     { integer }.
+     *
+     * @return     { list object }.
+     */
+    public static List fib(final int n) {
         List l = new List(n);
         int a = 0;
         int b = 1;
@@ -42,8 +51,12 @@ public class Fibonacci {
         }
         return l;
     }
-
-    public static void main(String[] args) {
+    /**
+     * { Main }.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         System.out.println(fib(n));
