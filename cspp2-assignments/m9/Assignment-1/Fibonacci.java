@@ -28,6 +28,12 @@ public class Fibonacci {
      * Look for the hint.txt if some of the testcases fail.
      */
     /**
+     * Constructs the object.
+     */
+    private Fibonacci() {
+
+    }
+    /**
      * { Prints Fibonacci Series }.
      *
      * @param      n     { integer }.
@@ -47,7 +53,7 @@ public class Fibonacci {
             l.add(c);
             a = b;
             b = c;
-            cou ++;
+            cou++;
         }
         return l;
     }
