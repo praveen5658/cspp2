@@ -14,7 +14,7 @@ class Student {
      * @param      name1  The name
      */
     protected Student(final String name1) {
-    //A constructor used to initialize the instance variables
+        //A constructor used to initialize the instance variables
         this.name = name1;
     }
     /**
@@ -23,7 +23,7 @@ class Student {
      * @return     The name.
      */
     public String getName() {
-    //Getter method which returns the value of instance variable
+        //Getter method which returns the value of instance variable
         return this.name;
     }
     /**
@@ -35,7 +35,7 @@ class Student {
      */
     @Override
     public boolean equals(final Object other) {
-    //This method is to check if two students names are equal or not
+        //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
         }
@@ -59,7 +59,7 @@ final class Solution {
     /**
      * Constructs the object.
      */
-    public Solution() {
+    protected Solution() {
 
     }
     /**
@@ -67,7 +67,7 @@ final class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         String objectType = stdin.nextLine();
@@ -80,7 +80,7 @@ final class Solution {
                 String line = stdin.nextLine();
                 // split the line using space
                 String[] tokens = line.split(" ");
-                // based on the list operation invoke the corresponding 
+                // based on the list operation invoke the corresponding
                 //method
                 switch (tokens[0]) {
                 case "add":
@@ -112,7 +112,8 @@ final class Solution {
                     System.out.println(listString.indexOf(tokens[1]));
                     break;
                 case "get":
-                    System.out.println(listString.get(Integer.parseInt(tokens[1])));
+                    System.out.println(listString.get(Integer.parseInt
+                                                      (tokens[1])));
                     break;
                 case "contains":
                     System.out.println(listString.contains(tokens[1]));
@@ -139,7 +140,7 @@ final class Solution {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Integer[] temp = new Integer[t1.length];
-                        for (int i = 0; i < temp.length; i++ ) {
+                        for (int i = 0; i < temp.length; i++) {
                             temp[i] = Integer.parseInt(t1[i]);
                         }
                         listInteger.addAll(temp);
@@ -162,13 +163,17 @@ final class Solution {
                     listInteger.remove(Integer.parseInt(tokens[1]));
                     break;
                 case "indexOf":
-                    System.out.println(listInteger.indexOf(Integer.parseInt((tokens[1]))));
+                    System.out.println(listInteger.indexOf
+                                       (Integer.parseInt((tokens[1]))));
                     break;
                 case "get":
-                    System.out.println(listInteger.get(Integer.parseInt(tokens[1])));
+                    System.out.println(listInteger.get
+                                       (Integer.parseInt(tokens[1])));
                     break;
                 case "contains":
                     System.out.println(listInteger.contains(Integer.parseInt((tokens[1]))));
+                    break;
+                default :
                     break;
                 }
             }
@@ -220,6 +225,8 @@ final class Solution {
                     break;
                 case "contains":
                     System.out.println(listFloat.contains(Float.parseFloat(tokens[1])));
+                    break;
+                default :
                     break;
                 }
             }
