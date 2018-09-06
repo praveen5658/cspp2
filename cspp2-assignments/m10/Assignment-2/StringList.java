@@ -117,7 +117,7 @@ public class StringList implements StringListInterface {
 	 * { For resize }
 	 */
 	public void resize() {
-		list = Arrays.copyOf(list, 2 * size);
+		list = Arrays.copyOf(list, 2 * list.length);
 	}
 
 
