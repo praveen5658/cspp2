@@ -139,12 +139,10 @@ public class StringList implements StringListInterface {
 	 */
 	public void add(final String item) {
 		//Inserts the specified element at the end of the zelist.
-		try {
-			list[size++] = item;
-		} catch (Exception e) {
-			resize();
-			list[size++] = item;
+		if (list.length<size +1) {
+			resize();		
 		}
+		list[size++] = item;
 	}
 	/*Inserts all the elements of specified int
 	array to the end of list*/
