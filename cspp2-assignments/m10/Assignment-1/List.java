@@ -295,7 +295,7 @@ public class List {
             resize();
         }
         for (int i = 0, j = 0; i < size + 1; i++, j++) {
-            if (i == index) {
+            if (i != index) {
                 sample[i] = sample[j];
             } else {
                 sample[i] = item;
