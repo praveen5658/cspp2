@@ -305,6 +305,7 @@ public class List {
         System.out.println(Arrays.toString(sample));
         list = sample.clone();
         toString();
+        size += 1;
     }
 
     /* Returns the count of occurances of a given item in the list*/
