@@ -302,9 +302,7 @@ public class List {
                 j--;
             }
         }
-        System.out.println(Arrays.toString(sample));
         list = sample.clone();
-        toString();
         size += 1;
     }
 
