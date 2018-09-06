@@ -199,11 +199,17 @@ public class StringList implements StringListInterface {
 	public void remove(final int index) {
 		// write the logic for remove here.
 		// Think about what to do to the size variable.
+		String[] sample = new String[size - 1];
 		if (index >= 0 && index < size) {
-			for (int i = index; i < size - 1; i++) {
-				list[i] = list[i + 1];
+			for (int i = 0,  j=0; i < size ; i++, j++) {
+				if (i!= index) {
+					sample[i] = list[i];
+				} else {
+					j--;
+				}	
 			}
 			size--;
+			list = sample.clone();
 		} else {
 			System.out.println("Invalid Position Exception");
 		}
