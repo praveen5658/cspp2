@@ -116,6 +116,7 @@ public class List {
             list[size++] = item;
         } catch (Exception e) {
             resize();
+            list[size++] = item;
         }
     }
 
