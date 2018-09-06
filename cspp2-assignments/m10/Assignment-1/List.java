@@ -295,14 +295,16 @@ public class List {
             resize();
         }
         for (int i = 0, j = 0; i < size + 1; i++, j++) {
-            if (i != index) {
+            if (i == index) {
                 sample[i] = sample[j];
             } else {
                 sample[i] = item;
                 j--;
             }
         }
+        System.out.println(sample);
         list = sample.clone();
+        System.out.println(list);
     }
 
     /* Returns the count of occurances of a given item in the list*/
