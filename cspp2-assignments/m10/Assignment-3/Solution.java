@@ -1,17 +1,33 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-//A Class is implemented for Student details
+/**
+ * Class for student.
+ */
 class Student {
 	private String name;
-	
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      name  The name
+	 */
 	public Student(String name) {//A constructor used to initialize the instance variables
 		this.name = name;
 	}
-
+	/**
+	 * Gets the name.
+	 *
+	 * @return     The name.
+	 */
 	public String getName() {//Getter method which returns the value of instance variable
 		return this.name;
 	}
-
+	/**
+	 * { Equals objecyts }.
+	 *
+	 * @param      other  The other
+	 *
+	 * @return     { Boolean }.
+	 */
 	@Override
 	public boolean equals(Object other) { //This method is to check if two students names are equal or not
 		if (!(other instanceof Student)) {
@@ -21,15 +37,25 @@ class Student {
 		Student that = (Student) other;
 		return this.getName().equals(that.getName());
 	}
-
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		return this.name;
 	}
 }
-
+/**
+ * Class for solution.
+ */
 public class Solution {
 	
-
+	/**
+	 * { Main }.
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
@@ -78,6 +104,8 @@ public class Solution {
 		                break;
 		                case "contains":
 		                System.out.println(listString.contains(tokens[1]));
+		                break;
+		                default :
 		                break;
 		            }
 		        }
