@@ -112,11 +112,12 @@ final class Solution {
                     System.out.println(listString.indexOf(tokens[1]));
                     break;
                 case "get":
-                    System.out.println(listString.get(Integer.parseInt
-                                                      (tokens[1])));
+                    System.out.println(listString.get(Integer.parseInt(
+                                                          tokens[1])));
                     break;
                 case "contains":
-                    System.out.println(listString.contains(tokens[1]));
+                    System.out.println(listString.contains(
+                                           tokens[1]));
                     break;
                 default :
                     break;
@@ -163,15 +164,16 @@ final class Solution {
                     listInteger.remove(Integer.parseInt(tokens[1]));
                     break;
                 case "indexOf":
-                    System.out.println(listInteger.indexOf
-                                       (Integer.parseInt((tokens[1]))));
+                    System.out.println(listInteger.indexOf(
+                                           Integer.parseInt((tokens[1]))));
                     break;
                 case "get":
-                    System.out.println(listInteger.get
-                                       (Integer.parseInt(tokens[1])));
+                    System.out.println(listInteger.get(
+                                           Integer.parseInt(tokens[1])));
                     break;
                 case "contains":
-                    System.out.println(listInteger.contains(Integer.parseInt((tokens[1]))));
+                    System.out.println(listInteger.contains(
+                                           Integer.parseInt((tokens[1]))));
                     break;
                 default :
                     break;
@@ -194,7 +196,7 @@ final class Solution {
                 case "addAll":
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
-                        Float temp[] = new Float[t1.length];
+                        Float[] temp = new Float[t1.length];
                         for (int i = 0; i < t1.length ; i++ ) {
                             temp[i] = Float.parseFloat(t1[i]);
                         }
