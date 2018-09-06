@@ -337,6 +337,7 @@ public class List {
      array to the end of list*/
     /**
      * { Adds alla elements }.
+     * @param items Array
      */
     public void addAll(final int[] items) {
         if ((size + items.length) > list.length) {
@@ -431,7 +432,7 @@ public class List {
             case "addAll":
                 if (tokens.length == 2) {
                     String[] t1 = tokens[1].split(",");
-                    int temp[] = new int[t1.length];
+                    int[] temp = new int[t1.length];
                     for (int i = 0; i < temp.length; i++) {
                         temp[i] = Integer.parseInt(t1[i]);
                     }
