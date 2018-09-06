@@ -48,7 +48,7 @@ public class List<E> {
      * { Re Sizing the Array Dynamically }.
      */
     public void resize() {
-        list = Arrays.copyOf(list, 2 * size);
+        list = Arrays.copyOf(list, 2 * list.length);
     }
     /*Inserts all the elements of specified int 
     array to the end of list*/
@@ -168,7 +168,7 @@ public class List<E> {
     public int indexOf(E item) {
        //Write logic for indexOf method
         for (int i = 0; i < size; i++) {
-            if (item == list[i]) {
+            if (item.equals(list[i])) {
                 return i;
             }
         }
