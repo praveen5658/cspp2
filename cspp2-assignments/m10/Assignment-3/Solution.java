@@ -76,21 +76,27 @@ final class Solution {
         case "S":
         //This case will be executed for String type list
             S();
+            break;
         case "I":
         //This case will be executed for Integer type list
             I();
+            break;
         case "F":
         //This case will be executed for Float type list
             F();
+            break;
         case "C":
         //This case will be executed for Character type list
             C();
+            break;
         case "D":
         //This case will be executed for Double type list
             D();
+            break;
         case "O":
         //This case will be executed for Student type list i.e to store List of Student Objects
             O();
+            break;
         default:
             break;
         }
