@@ -328,17 +328,12 @@ public class List {
      */
     public boolean equals(List list1 ) {
         if (size == list1.size) {
-            int cou = 0;
             for (int i = 0; i < size; i++) {
-                for (int j = 0; j < size; j++) {
-                    if (list[i] == list1.list[j]) {
-                        cou ++;
-                    }
+                if (list[i] != list1.list[i]) {
+                    return false;
                 }
             }
-            if (cou == size) {
-                return true;
-            }
+            return true;
         }
         return false;
     }
@@ -354,7 +349,6 @@ public class List {
         int[] sample = new int[1];
         list = sample.clone();
         size = 0;
-
     }
 
     public static void main(String[] args) {
