@@ -221,7 +221,7 @@ public class List<E> {
 				}
 				return true;
 			} catch (Exception e) {
-				return false;
+				System.out.println("hello");
 			}
 		}
 		return false;
