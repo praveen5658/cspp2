@@ -66,7 +66,8 @@ public class List {
 	private int size;
 
 	/*
-	 * The purpose of the constructor is to initialize the class variables with
+	 * The purpose of the constructor is to initialize the class
+	 * variables with
 	 * some default values.
 	 */
 	/**
@@ -74,13 +75,17 @@ public class List {
 	 */
 	public List() {
 
-		// what are the two variables to be initialized here? think about the
-		// private variables described above. What should be the default values?
-		// In the case of the list, it should be empty but it should be
+		// what are the two variables to be initialized here?
+		// think about the
+		// private variables described above. What should be the
+		// default values?
+		// In the case of the list, it should be empty but it
+		// should be
 		// initialized with an array size like 10
 
 		// Think about the initial value for size.
-		// How many newArray do we have in the list when you create it?
+		// How many newArray do we have in the list when you
+		// create it?
 		// An empty list has how many newArray?
 		// That is the initial value to use for size.
 		final int ten = 10;
@@ -90,9 +95,12 @@ public class List {
 	}
 
 	/*
-	 * The add method does what the name suggests. Add an int item to the list.
-	 * The assumption is to store the item at the end of the list What is the
-	 * end of the list? Is it the same as the end of the array? Think about how
+	 * The add method does what the name suggests. Add an int
+	 * item to the list.
+	 * The assumption is to store the item at the end of the
+	 * list What is the
+	 * end of the list? Is it the same as the end of the array?
+	 * Think about how
 	 * you can use the size variable to add item to the list.
 	 *
 	 * The method returns void (nothing)
@@ -115,8 +123,10 @@ public class List {
 	}
 
 	/*
-	 * The size method returns the value of the size. The purpose of the method
-	 * is to announce the size of the list to the objects outside the list
+	 * The size method returns the value of the size. The purpose
+	 of the method
+	 * is to announce the size of the list to the objects outside
+	 the list
 	 *
 	 * The method returns an int. Empty list should return 0.
 	 *
@@ -132,16 +142,25 @@ public class List {
 	}
 
 	/*
-	 * The remove method does what the name suggests. Removes an int item,
-	 * specified by the index argument, from the list It also does an additional
-	 * step. Think about what happens when an item is removed from the middle of
-	 * the list It creates a hole in the list, right? This would mean, all the
-	 * newArray that are to the right side of the removed item should be moved to
+	 * The remove method does what the name suggests. Removes an
+	 * int item,
+	 * specified by the index argument, from the list It also does
+	 * an additional
+	 * step. Think about what happens when an item is removed from
+	 * the middle of
+	 * the list It creates a hole in the list, right? This would mean,
+	 * all the
+	 * newArray that are to the right side of the removed item should
+	 * be moved to
 	 * the left by one position. Here is an example: array =
-	 * [1,2,3,0,0,0,0,0,0,0] remove(1) would remove the item 2 which is at index
-	 * position 1. But how do you remove the item from an array? Well, the way
-	 * to remove it is to move all the newArray, that are to the right of the
-	 * removed item, to the left So, the new array looks like this. array =
+	 * [1,2,3,0,0,0,0,0,0,0] remove(1) would remove the item 2 which
+	 * is at index
+	 * position 1. But how do you remove the item from an array? Well,
+	 * the way
+	 * to remove it is to move all the newArray, that are to the right
+	 * of the
+	 * removed item, to the left So, the new array looks like this.
+	 * array =
 	 * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
 	 *
 	 */
@@ -151,7 +170,8 @@ public class List {
 	 * @param      index  The index
 	 */
 	public void remove(int item) {
-		// write the logic for remove here. Think about what to do to the size
+		// write the logic for remove here. Think about what to do
+		// to the size
 		// variable.
 		int c = 0;
 		for (int k = 0; k < list.length; k++) {
