@@ -88,18 +88,18 @@ public class List<E> {
 	 * array = [1,3,0,0,0,0,0,0,0,0]
 	 * The method returns void (nothing)
 	 */
-	public void remove(E item) {
+	public void remove(int item) {
 		//Write logic for remove method
 		if (size != 0) {
 			E[] sample = (E[])new Object[size];
 			int count = 0;
 			for (int i = 0, j = 0; i < size; i++, j++) {
-				if (list[i].equals(item)) {
-					sample[j] = list[i];
-				} else {
+				if (i == item) {
 					i++;
 					count ++;
 					j--;
+				} else {
+					sample[j] = list[i];
 				}
 			}
 			size -= count;
@@ -189,7 +189,7 @@ public class List<E> {
 	 */
 	public void removeAll(E[] items) {
 		for (int i = 0; i < items.length; i++) {
-			remove(items[i]);
+			remove(indexOf(items[i]));
 		}
 	}
 
