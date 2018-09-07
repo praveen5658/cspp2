@@ -351,7 +351,7 @@ public class List {
      * { Clears the Array }.
      */
     public void clear() {
-        int[] sample = new int[0];
+        int[] sample = new int[1];
         list = sample.clone();
         size = 0;
 
