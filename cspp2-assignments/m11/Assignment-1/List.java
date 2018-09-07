@@ -305,10 +305,11 @@ public class List {
     	int[] sample = new int[end - start];
     	System.arraycopy(list, start, sample, 0, end - start);
     	l1.addAll(sample);
+    	return l1;
     	} catch (Exception e) {
     		System.out.println("Index Out of Bounds Exception");
+    		return null;
     	}
-    	return l1;
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
