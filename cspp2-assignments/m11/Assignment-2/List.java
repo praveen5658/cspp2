@@ -213,18 +213,20 @@ public class List<E> {
 	public boolean equals(List<E> listdata) {
 		int coun = 0;
 		if (size == listdata.size) {
-            for (int i = 0; i < size; i++) {
-                if (list[i].equals(listdata.list[i])) {
-                    coun ++;
-                }
-            }
-            if (coun == size) {
-            	return true;
-            } else {
-            	return false;
-            }
-        }
-        return false;
+			for (int i = 0; i < size; i++) {
+				for (int j = 0; j < size; j++) {
+					if (list[i].equals(listdata.list[j])) {
+						coun ++;
+					}
+				}
+			}
+			if (coun == size) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
 	}
 	/*Removes all the elements from list*/
 	public void clear() {
