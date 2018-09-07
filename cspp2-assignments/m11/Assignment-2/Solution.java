@@ -522,7 +522,7 @@ public class Solution {
                 if (tokens.length == 2) {
                     String[] t1 = tokens[1].split(",");
                     Student[] students = new Student[t1.length];
-                    for (int i = 0; i < t1.length ; i++) {
+                    for (int i = 0; i < t1.length; i++) {
                         students[i] = new Student(t1[i]);
                     }
                     l.addAll(students);
@@ -532,7 +532,7 @@ public class Solution {
                 if (tokens.length == 2) {
                     String[] t1 = tokens[1].split(",");
                     Student[] students = new Student[t1.length];
-                    for (int i = 0; i < t1.length ; i++) {
+                    for (int i = 0; i < t1.length; i++) {
                         students[i] = new Student(t1[i]);
                     }
                     l.removeAll(students);
@@ -554,7 +554,7 @@ public class Solution {
                 if (tokens.length == 2) {
                     String[] lt = tokens[1].split(",");
                     List l2 = new List();
-                    for (int k = 0; k < lt.length; k++ ) {
+                    for (int k = 0; k < lt.length; k++) {
                         l2.add((lt[k]));
                     }
                     System.out.println(l.equals(l2));
@@ -568,7 +568,11 @@ public class Solution {
             }
         }
     }
-
+    /**
+     * { Main }.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         // create an object of the list to invoke
         //methods on it
