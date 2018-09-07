@@ -97,7 +97,6 @@ public class List<E> {
 				if (i != index) {
 					sample[j] = list[i];
 				} else {
-					i++;
 					count ++;
 					j--;
 				}
