@@ -35,10 +35,14 @@ public class List<E> {
 		//Inserts the specified element at the n2 of the list.
 		//You can modify the code in this method.
 		// list[(size++)] = item;
-		if (list.length < size + 1) {
-			resize();
+		try {
+			if (list.length < size + 1) {
+				resize();
+			}
+			list[size++] = item;
+		} catch (Exception e) {
+			System.out.println("Invalid Position Exception");
 		}
-		list[size++] = item;
 	}
 	/*Inserts all the elements of specified int
 	array to the n2 of list*/
