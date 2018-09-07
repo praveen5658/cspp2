@@ -326,12 +326,17 @@ public class List {
 	 */
 	public boolean equals(List list1 ) {
 		if (size == list1.size) {
+			int cou = 0;
 			for (int i = 0; i < size; i++) {
-				if (list[i] != list1.list[i]) {
-					return false;
+				for (int j = 0; j < size; j++) {
+					if (list[i] == list1.list[j]) {
+						cou ++;
+					}
 				}
 			}
-			return true;
+			if (cou == size) {
+				return true;
+			}
 		}
 		return false;
 	}
