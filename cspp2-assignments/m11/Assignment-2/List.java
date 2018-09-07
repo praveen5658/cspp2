@@ -211,18 +211,16 @@ public class List<E> {
 	  i.e a List object is exactly matching with the given list or not.
 	 */
 	public boolean equals(List<E> listdata) {
-		int coun = 0;
 		if (size == listdata.size) {
-			for (int i = 0; i < size; i++) {
-				for (int j = 0; j < size; j++) {
-					if (list[i].equals(listdata.list[j])) {
-						coun ++;
+			try {
+				for (int i = 0; i < size; i++) {
+					E item = list[i];
+					if (count(list, item) != count(listdata.list, item)) {
+						return false;
 					}
 				}
-			}
-			if (coun == size) {
 				return true;
-			} else {
+			} catch (Exception e) {
 				return false;
 			}
 		}
@@ -234,5 +232,14 @@ public class List<E> {
 		E[] sample = (E[])new Object[1];
 		list = sample.clone();
 		size = 0;
+	}
+	public int count(E[] arr, E item) {
+		int cou = 0;
+		for (int i = 0;i<arr.length;i++) {
+			if (arr[i].equals(item)) {
+				cou++;
+			}
+		}
+		return cou;
 	}
 }
