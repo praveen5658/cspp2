@@ -35,7 +35,7 @@ class Student {
      * @return     { Boolean }.
      */
     @Override
-    public boolean equals(Object other) {
+    public boolean equals(final Object other) {
         //This method is to check if two students names are equal
         //or not
         if (!(other instanceof Student)) {
@@ -62,6 +62,12 @@ class Student {
  * Class for solution.
  */
 public class Solution {
+    /**
+     * Constructs the object.
+     */
+    protected Solution() {
+
+    }
     /**
      * { ListInteger Method }.
      *
