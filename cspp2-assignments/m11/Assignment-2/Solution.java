@@ -14,7 +14,7 @@ class Student {
      *
      * @param      name1  The name 1
      */
-    public Student(final String name1) {
+    protected Student(final String name1) {
         //A constructor used to initialize the instance variables
         this.name = name1;
     }
@@ -44,6 +44,10 @@ class Student {
 
         Student that = (Student) other;
         return this.getName().equals(that.getName());
+    }
+    @Override
+    public int hashCode() {
+        return 0;
     }
     /**
      * Returns a string representation of the object.
