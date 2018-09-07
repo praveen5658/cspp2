@@ -35,14 +35,10 @@ public class List<E> {
 		//Inserts the specified element at the n2 of the list.
 		//You can modify the code in this method.
 		// list[(size++)] = item;
-		try {
-			if (list.length < size + 1) {
-				resize();
-			}
-			list[size++] = item;
-		} catch (Exception e) {
-			System.out.println("Invalid Position Exception");
+		if (list.length < size + 1) {
+			resize();
 		}
+		list[size++] = item;
 	}
 	/*Inserts all the elements of specified int
 	array to the n2 of list*/
@@ -94,7 +90,7 @@ public class List<E> {
 	 */
 	public void remove(E item) {
 		//Write logic for remove method
-		try {
+		if (size != 0) {
 			E[] sample = (E[])new Object[size];
 			int count = 0;
 			for (int i = 0, j = 0; i < size; i++, j++) {
@@ -108,7 +104,7 @@ public class List<E> {
 			}
 			size -= count;
 			list = sample.clone();
-		} catch (Exception e) {
+		} else {
 			System.out.println("Invalid Position Exception");
 		}
 	}
