@@ -143,18 +143,21 @@ public class List {
     public void remove(int item) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
-        int[] sample = new int[size];
-        int count = 0;
+        int c = 0;
+        for (int k=0;k<list.length;k++) {
+        	if (list[k] == item) {
+        		c++;
+        	}
+        }
+        int[] sample = new int[size - c];
         for (int i = 0, j = 0; i < size; i++, j++) {
             if (list[i] != item) {
                 sample[j] = list[i];
             } else {
-                i++;
-                count ++;
                 j--;
             }
         }
-        size -= count;
+        size -= c;
         list = sample.clone();
     }
 
