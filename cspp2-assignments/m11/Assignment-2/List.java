@@ -90,19 +90,23 @@ public class List<E> {
 	 */
 	public void remove(E item) {
 		//Write logic for remove method
-		E[] sample = (E[])new Object[size];
-		int count = 0;
-		for (int i = 0, j = 0; i < size; i++, j++) {
-			if (list[i].equals(item)) {
-				sample[j] = list[i];
-			} else {
-				i++;
-				count ++;
-				j--;
+		try {
+			E[] sample = (E[])new Object[size];
+			int count = 0;
+			for (int i = 0, j = 0; i < size; i++, j++) {
+				if (list[i].equals(item)) {
+					sample[j] = list[i];
+				} else {
+					i++;
+					count ++;
+					j--;
+				}
 			}
+			size -= count;
+			list = sample.clone();
+		} catch (Exception e) {
+			System.out.println("Invalid Position Exception");
 		}
-		size -= count;
-		list = sample.clone();
 	}
 	/*
 	 * Get method has to return the items that is
