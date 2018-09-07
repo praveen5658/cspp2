@@ -142,7 +142,7 @@ public class Solution {
                 break;
                 case "remove":
                     if (tokens.length == 2) {
-                        l.remove(Double.parseDouble(tokens[1]));
+                        l.remove(Integer.parseInt(tokens[1]));
                     }
                 break;
                 case "indexOf":
@@ -230,7 +230,7 @@ public class Solution {
                 break;
                 case "remove":
                     if (tokens.length == 2) {
-                        l.remove(Float.parseFloat(tokens[1]));
+                        l.remove(Integer.parseInt(tokens[1]));
                     }
                 break;
                 case "indexOf":
@@ -319,7 +319,7 @@ public class Solution {
                 break;
                 case "remove":
                     if (tokens.length == 2) {
-                        l.remove((tokens[1]));
+                        l.remove(Integer.parseInt(tokens[1]));
                     }
                 break;
                 case "indexOf":
@@ -401,7 +401,7 @@ public class Solution {
                 break;
                 case "remove":
                     if (tokens.length == 2) {
-                        l.remove(new Student(tokens[1]));
+                        l.remove(Integer.parseInt(tokens[1]));
                     }
                 break;
                 case "indexOf":
