@@ -92,10 +92,14 @@ public class List {
      */
     public void add(final int item) {
         //Inserts the specified element at the end of the list.
-        if (list.length < size + 1) {
-            resize();
-        }
-        list[size++] = item;
+        try {
+	        if (list.length < size + 1) {
+	            resize();
+	        }
+	        list[size++] = item;
+	    } catch (Exception e) {
+	    	System.out.println("Index Out of Bounds Exception");
+	    }
     }
 
     /*
