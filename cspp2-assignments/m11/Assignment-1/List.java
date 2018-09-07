@@ -306,10 +306,15 @@ public class List {
         // write the logic for subList
         List l1 = new List();
         try {
-            int[] sample = new int[end - start];
-            System.arraycopy(list, start, sample, 0, end - start);
-            l1.addAll(sample);
-            return l1;
+        	if (size != 0) {
+	            int[] sample = new int[end - start];
+	            System.arraycopy(list, start, sample, 0, end - start);
+	            l1.addAll(sample);
+	            return l1;
+	        } else {
+	        	System.out.println("Index Out of Bounds Exception");
+            	return null;
+	        }
         } catch (Exception e) {
             System.out.println("Index Out of Bounds Exception");
             return null;
