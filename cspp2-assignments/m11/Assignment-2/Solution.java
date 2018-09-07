@@ -338,8 +338,9 @@ public class Solution {
                 if (tokens.length == 2) {
                     String[] t2 = tokens[1].split(",");
                     Float[] a = new Float[t2.length];
-                    for (int i = 0; i < t2.length; i++)
+                    for (int i = 0; i < t2.length; i++) {
                         a[i] = Float.parseFloat(t2[i]);
+                    }
                     l.removeAll(a);
                 }
                 break;
