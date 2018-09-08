@@ -45,13 +45,17 @@ class Set {
      * Returns a string representation of the object.
      */
     public String toString() {
-    	String st = new String("{");
-    	int i = 0;
-    	for (i = 0; i<size-1;i++) {
-    		st += Integer.toString(set[i]) + ",";
-    	}
-    	st += Integer.toString(set[i]) + "}";
-    	return st;
+    	if (size == 0) {
+    		return "{}";
+    	} else {
+	    	String st = new String("{");
+	    	int i = 0;
+	    	for (i = 0; i<size-1;i++) {
+	    		st += Integer.toString(set[i]) + ",";
+	    	}
+	    	st += Integer.toString(set[i]) + "}";
+	    	return st;
+	    }
     }
     /**
      * { Adds Single item to the set }.
@@ -59,7 +63,9 @@ class Set {
      * @param      item  The item
      */
     public void add(final int item) {
-    	set[size++] = item;
+    	if (!contains(item)) {
+    		set[size++] = item;
+    	}
     }
     /**
      * { Adds array of elements to set }.
