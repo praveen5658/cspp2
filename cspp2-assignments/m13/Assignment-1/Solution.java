@@ -117,7 +117,7 @@ class Set {
     			}
     		}
     		if (k == 0) {
-    			return "{0}";
+    			return "{}";
     		} else {
 	    		String st = converttostring(sample, k);
 	    		return st;
@@ -147,7 +147,7 @@ class Set {
     			}
     		}
     		if (k == 0) {
-    			return "{0}";
+    			return "{}";
     		} else {
 	    		String st = converttostring(sample, k);
 	    		return st;
