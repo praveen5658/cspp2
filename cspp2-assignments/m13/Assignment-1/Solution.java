@@ -51,7 +51,7 @@ class Set {
 	    	String st = new String("{");
 	    	int i = 0;
 	    	for (i = 0; i<size-1;i++) {
-	    		st += Integer.toString(set[i]) + ",";
+	    		st += Integer.toString(set[i]) + ", ";
 	    	}
 	    	st += Integer.toString(set[i]) + "}";
 	    	return st;
@@ -89,7 +89,7 @@ class Set {
     	String st = new String("{");
     	int i = 0;
     	for (i = 0; i<k-1;i++) {
-    		st += Integer.toString(sample[i]) + ",";
+    		st += Integer.toString(sample[i]) + ", ";
     	}
     	st += Integer.toString(sample[i]) + "}";
     	return st;	
