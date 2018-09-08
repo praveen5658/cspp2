@@ -161,8 +161,8 @@ class Set {
     		int arr[][] = new int[size * other.size][2];
     		for (int i = 0; i< size; i++) {
     			for (int j = 0; j< other.size;j++) {
-    				arr[j][0] = set[i];
-    				arr[j][1] = other.set[j];
+    				arr[(other.size * i) + j][0] = set[i];
+    				arr[(other.size * i) + j][1] = other.set[j];
     			}
     		}
     		return arr;
