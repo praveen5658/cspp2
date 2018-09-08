@@ -172,7 +172,7 @@ class Set {
      *
      * @return     { IntegerArray }.
      */
-    public int[][] cartesianProduct(Set other) {
+    public int[][] cartesianProduct(final Set other) {
         if (size == 0 || other.size == 0) {
             return null;
         } else {
@@ -286,3 +286,4 @@ public final class Solution {
         }
     }
 }
+
