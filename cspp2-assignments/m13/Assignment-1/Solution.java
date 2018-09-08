@@ -116,8 +116,12 @@ class Set {
     				}
     			}
     		}
-    		String st = converttostring(sample, k);
-    		return st;
+    		if (k == 0) {
+    			return "{0}";
+    		} else {
+	    		String st = converttostring(sample, k);
+	    		return st;
+    		}
     	}
     }
     /**
@@ -142,8 +146,12 @@ class Set {
     				}
     			}
     		}
-    		String st = converttostring(sample, k);
-    		return st;
+    		if (k == 0) {
+    			return "{0}";
+    		} else {
+	    		String st = converttostring(sample, k);
+	    		return st;
+    		}
     	}
     }
     public int[][] cartesianProduct(Set other) {
