@@ -228,9 +228,9 @@ public final class Solution {
                 s.addAll(intArray);
                 break;
             case "subSet":
-                intArray = intArray(tokens[1]);
-                int fromElement = intArray[0];
-                int toElement = intArray[1];
+                int[] intArray1 = intArray(tokens[1]);
+                int fromElement = intArray1[0];
+                int toElement = intArray1[1];
                 if (fromElement > toElement) {
                     System.out.println("Invalid​ Arguments​ to​ Subset​ Exception");
                 } else {
