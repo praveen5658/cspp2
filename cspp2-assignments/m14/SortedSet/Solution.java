@@ -103,7 +103,7 @@ class Set {
      *
      * @return     { Integer Array }.
      */
-    public int[] resize(int[] arr) {
+    public int[] resize(final int[] arr) {
         int[] arr1 = Arrays.copyOf(arr, 2 * arr.length);
         return arr1;
     }
