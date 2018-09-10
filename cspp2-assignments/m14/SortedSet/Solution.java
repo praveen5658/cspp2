@@ -57,15 +57,17 @@ class Set {
      * @param      item  The item
      */
     public void add(final int item) {
-        if (size >= set.length) {
-            set = resize(set);
+        if (!contains(item)) {
+            if (size >= set.length) {
+                set = resize(set);
+            }
+            set[size++] = item;
+            int[] sub = new int[size];
+            System.arraycopy(set, 0, sub, 0, size);
+            Arrays.sort(sub);
+            set = new int[size];
+            set = sub.clone();
         }
-        set[size++] = item;
-        int[] sub = new int[size];
-        System.arraycopy(set, 0, sub, 0, size);
-        Arrays.sort(sub);
-        set = new int[size];
-        set = sub.clone();
     }
     /**
      * { Adds array of elements to set }.
@@ -130,6 +132,21 @@ class Set {
         sa.set = sub.clone();
         sa.size = j;
         return sa;
+    }
+    /**
+     * { Checks whether item contains or not }.
+     *
+     * @param      item  The item
+     *
+     * @return     { Boolean }.
+     */
+    public boolean contains(final int item) {
+        for (int i = 0; i < size; i++) {
+            if (set[i] == item) {
+                return true;
+            }
+        }
+        return false;
     }
     /**
      * { HeadSet }.
