@@ -97,9 +97,11 @@ class Set {
         return st;
     }
     /**
-     * { Resiuzing Array }.
+     * { Resize }.
      *
      * @param      arr   The arr
+     *
+     * @return     { Integer Array }.
      */
     public int[] resize(int[] arr) {
         arr = Arrays.copyOf(arr, 2 * arr.length);
@@ -115,8 +117,9 @@ class Set {
      */
     public Set subSet(final int fromElement, final int toElement) {
         Set sa = new Set();
+        final int ten = 10;
         int j = 0;
-        int[] sample = new int[10];
+        int[] sample = new int[ten];
         for (int i = 0; i < size; i++) {
             if (set[i] >= fromElement && set[i] < toElement) {
                 if (j == 10) {
@@ -157,8 +160,9 @@ class Set {
      */
     public Set headSet(final int toElement) {
         Set sa = new Set();
+        final int ten = 10;
         int j = 0;
-        int[] sample = new int[10];
+        int[] sample = new int[ten];
         for (int i = 0; i < size; i++) {
             if (set[i] < toElement) {
                 if (j == 10) {
