@@ -12,7 +12,7 @@ class Set {
     /**
     Private Value.
     */
-    protected int size;
+    private int size;
     /**
     Private Value.
     */
@@ -181,7 +181,12 @@ class Set {
      * @return     { Integer }.
      */
     public int last() {
-        return set[size - 1];
+        if (size == 0) {
+            System.out.println("Set Empty Exception");
+            return -1;
+        } else {
+            return set[size - 1];
+        }
     }
 }
 
@@ -263,11 +268,7 @@ public final class Solution {
                 System.out.println(sa);
                 break;
             case "last":
-                if (s.size == 0) {
-                    System.out.println("Set Empty Exception");
-                } else {
-                    System.out.println(s.last());
-                }
+                System.out.println(s.last());
                 break;
             default:
                 break;
