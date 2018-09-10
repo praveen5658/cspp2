@@ -249,7 +249,7 @@ public final class Solution {
                 int fromElement = intArray1[0];
                 int toElement = intArray1[1];
                 if (fromElement > toElement) {
-                    System.out.println("Invalid​ Arguments​ to​ Subset​ Exception");
+                    System.out.println("Invalid Arguments to Subset Exception");
                 } else {
                     Set sa = new Set();
                     sa = s.subSet(fromElement, toElement);
