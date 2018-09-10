@@ -104,8 +104,8 @@ class Set {
      * @return     { Integer Array }.
      */
     public int[] resize(int[] arr) {
-        arr = Arrays.copyOf(arr, 2 * arr.length);
-        return arr;
+        int[] arr1 = Arrays.copyOf(arr, 2 * arr.length);
+        return arr1;
     }
     /**
      * { SubSet }.
@@ -122,7 +122,7 @@ class Set {
         int[] sample = new int[ten];
         for (int i = 0; i < size; i++) {
             if (set[i] >= fromElement && set[i] < toElement) {
-                if (j == 10) {
+                if (j == ten) {
                     resize(sample);
                 }
                 sample[j] = set[i];
@@ -165,7 +165,7 @@ class Set {
         int[] sample = new int[ten];
         for (int i = 0; i < size; i++) {
             if (set[i] < toElement) {
-                if (j == 10) {
+                if (j == ten) {
                     resize(sample);
                 }
                 sample[j] = set[i];
