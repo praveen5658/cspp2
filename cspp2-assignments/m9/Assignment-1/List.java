@@ -1,3 +1,6 @@
+/**
+ * { Bufferreader }.
+ */
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 
