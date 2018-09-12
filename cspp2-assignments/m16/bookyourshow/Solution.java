@@ -219,7 +219,7 @@ class BookYourShow {
          */
         Show show = getAShow(moviename, datetime);
         if (show == null) {
-            // System.out.println("No show");
+            System.out.println("No show");
         } else {
             String[] showseats = show.getseat();
             for (int i = 0; i < showseats.length; i++) {
