@@ -92,10 +92,25 @@ class Item {
  * Class for shopping cartesian.
  */
 class ShoppingCart {
+    /**
+     * { var_description }.
+     */
     private Item[] catalog;
+    /**
+     * { var_description }.
+     */
     private Item[] cart;
+    /**
+     * { var_description }.
+     */
     private int catalogsize;
+    /**
+     * { var_description }.
+     */
     private int cartsize;
+    /**
+     * { var_description }.
+     */
     private int coupon;
     /**
      * Constructs the object.
