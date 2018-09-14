@@ -70,19 +70,29 @@ class ShoppingCart {
         if (cartsize == cart.length) {
             resize();
         }
-        for (int i = 0; i < catalogsize; i++) {
-            if (catalog[i].getitemName().equals(item1.getitemName()) &&
-                    (catalog[i].itemQuantity > item1.itemQuantity)) {
-                cart[cartsize++] = item1;
-                catalog[i].itemQuantity -= item1.itemQuantity;
+        int l = 0;
+        for (int j = 0;j<cartsize;j++) {
+            if (cart[j].getitemName().equals(item1.getitemName())) {
+                cart[j].itemQuantity += item1.itemQuantity;
+                l++;
                 break;
-            } else if (catalog[i].getitemName().equals(item1.getitemName()) &&
-                       (catalog[i].itemQuantity == item1.itemQuantity)) {
-                cart[cartsize++] = item1;
-                removefromCatalog(catalog[i]);
-                break;
-            } else {
-                k++;
+            }
+        }
+        if (l == 0) {
+            for (int i = 0; i < catalogsize; i++) {
+                if (catalog[i].getitemName().equals(item1.getitemName()) &&
+                        (catalog[i].itemQuantity > item1.itemQuantity)) {
+                    cart[cartsize++] = item1;
+                    catalog[i].itemQuantity -= item1.itemQuantity;
+                    break;
+                } else if (catalog[i].getitemName().equals(item1.getitemName()) &&
+                           (catalog[i].itemQuantity == item1.itemQuantity)) {
+                    cart[cartsize++] = item1;
+                    removefromCatalog(catalog[i]);
+                    break;
+                } else {
+                    k++;
+                }
             }
         }
     }
