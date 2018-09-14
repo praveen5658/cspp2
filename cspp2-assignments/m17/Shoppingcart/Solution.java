@@ -5,10 +5,6 @@ import java.util.Scanner;
 /**
  * { Item_description }.
  */
-import java.util.Arrays;
-/**
- * { Item_description }.
- */
 public final class Solution {
     /**
      * Constructs the object.
