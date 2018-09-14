@@ -194,7 +194,7 @@ public final class Solution {
 					System.out.println("Not a valid coupon");
 				}
 				break;
-			case "paybleAmount":
+			case "payableAmount":
 				System.out.println("Payble amount:" + sc.getpaybleAmount());
 			case "print":
 				sc.printInvoice();
