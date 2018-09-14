@@ -1,9 +1,9 @@
 /**
- * { item_description }
+ * { item_description }.
  */
 import java.util.Scanner;
 /**
- * { item_description }
+ * { item_description }.
  */
 import java.util.Arrays;
 /**
@@ -20,41 +20,41 @@ class item {
      * @param      quantity  The quantity
      * @param      price     The price
      */
-    item(String name, int quantity, float price) {
+    item(final String name, final int quantity, final float price) {
         itemName = name;
         itemQuantity = quantity;
         itemUnitPrice = price;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public String getitemName() {
         return itemName;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public int getitemQuantity() {
         return itemQuantity;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public float getitemUnitPrice() {
         return itemUnitPrice;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      quan  The quan
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public String printString(final float quan) {
         String s = itemName + " " + String.valueOf(
@@ -67,8 +67,9 @@ class item {
      * @return     String representation of the object.
      */
     public String toString() {
+        final float zero = 0.0f;
         String s = "";
-        if (itemUnitPrice != 0.0) {
+        if (itemUnitPrice != zero) {
             s = itemName + " " + String.valueOf(
                     itemQuantity) + " " + String.valueOf(itemUnitPrice);
         } else {
@@ -91,25 +92,26 @@ class ShoppingCart {
      * Constructs the object.
      */
     protected ShoppingCart() {
-        catalog = new item[10];
-        cart = new item[10];
+        final int ten = 10;
+        catalog = new item[ten];
+        cart = new item[ten];
         catalogsize = 0;
         cartsize = 0;
         coupon = 0;
     }
     /**
-     * { function_description }
+     * { function_description }.
      */
     public void resize() {
         catalog = Arrays.copyOf(catalog, catalogsize + 1);
         cart = Arrays.copyOf(cart, cartsize + 1);
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      item1  The item 1
      */
-    public void addtoCatalog(item item1) {
+    public void addtoCatalog(final item item1) {
         if (catalogsize == catalog.length) {
             resize();
         }
@@ -124,32 +126,37 @@ class ShoppingCart {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      item1  The item 1
      */
-    public void addtoCart(item item1) {
+    public void addtoCart(final item item1) {
         int k = 0;
+        final int z = 0;
         if (cartsize == cart.length) {
             resize();
         }
         int l = 0;
-        for (int j = 0;j<cartsize;j++) {
+        for (int j = 0; j < cartsize; j++) {
             if (cart[j].getitemName().equals(item1.getitemName())) {
                 cart[j].itemQuantity += item1.itemQuantity;
                 l++;
                 break;
             }
         }
-        if (l == 0) {
+        if (l == z) {
             for (int i = 0; i < catalogsize; i++) {
-                if (catalog[i].getitemName().equals(item1.getitemName()) &&
-                        (catalog[i].itemQuantity > item1.itemQuantity)) {
+                if (catalog[i].getitemName().equals(
+                            item1.getitemName()) &&
+                        (catalog[i].itemQuantity >
+                         item1.itemQuantity)) {
                     cart[cartsize++] = item1;
                     catalog[i].itemQuantity -= item1.itemQuantity;
                     break;
-                } else if (catalog[i].getitemName().equals(item1.getitemName()) &&
-                           (catalog[i].itemQuantity == item1.itemQuantity)) {
+                } else if (catalog[i].getitemName().equals(
+                               item1.getitemName()) &&
+                           (catalog[i].itemQuantity ==
+                            item1.itemQuantity)) {
                     cart[cartsize++] = item1;
                     removefromCatalog(catalog[i]);
                     break;
@@ -168,13 +175,15 @@ class ShoppingCart {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      */
     public void printCart() {
         for (int i = 0; i < cartsize; i++) {
             for (int j = 0; j < catalogsize; j++) {
-                if (cart[i].getitemName().equals(catalog[j].getitemName())) {
-                    System.out.println(cart[i].printString(catalog[j].itemUnitPrice));
+                if (cart[i].getitemName().equals(
+                            catalog[j].getitemName())) {
+                    System.out.println(cart[i].printString(
+                                           catalog[j].itemUnitPrice));
                 }
             }
         }
@@ -188,7 +197,8 @@ class ShoppingCart {
         float f = 0.0f;
         for (int i = 0; i < cartsize; i++) {
             for (int j = 0; j < catalogsize; j++) {
-                if (cart[i].getitemName().equals(catalog[j].getitemName())) {
+                if (cart[i].getitemName().equals(
+                            catalog[j].getitemName())) {
                     f += cart[i].itemQuantity * catalog[j].itemUnitPrice;
                     break;
                 }
@@ -197,11 +207,11 @@ class ShoppingCart {
         return f;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      item1  The item 1
      */
-    public void removefromCart(item item1) {
+    public void removefromCart(final item item1) {
         // item[] sample = new item[cartsize-1];
         for (int i = 0; i < cartsize; i++) {
             if ((cart[i].getitemName().equals(item1.getitemName()))) {
@@ -223,7 +233,7 @@ class ShoppingCart {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      item1  The item 1
      */
@@ -239,7 +249,7 @@ class ShoppingCart {
         cartsize -= 1;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      item1  The item 1
      */
@@ -255,7 +265,7 @@ class ShoppingCart {
         catalogsize -= 1;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      disc  The disc
      */
@@ -265,38 +275,49 @@ class ShoppingCart {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public float getpaybleAmount() {
+        final float hun = 100.0f;
+        final float po = 1.15f;
         if (coupon == 0) {
-            return (getTotalAmount() * 1.15f);
+            return (getTotalAmount() * po);
         }
-        return ((getTotalAmount() - (getTotalAmount() * (coupon / 100.0f))) * 1.15f);
+        return ((getTotalAmount() - (getTotalAmount() * (
+                                         coupon / hun))) * po);
     }
     /**
-     * { function_description }
+     * { function_description }.
      */
     public void printInvoice() {
+        final float hun = 100.0f;
+        final float po = 0.15f;
+        final int ze = 0;
         System.out.println("Name" + "   " + "quantity" + "   " + "Price");
         printCart();
         System.out.println("Total:" + getTotalAmount());
-        if (coupon == 0) {
+        if (coupon == ze) {
             System.out.println("Disc%:0.0");
         } else {
-            System.out.println("Disc%:" + (getTotalAmount() * (coupon / 100.0f)));
+            System.out.println("Disc%:" + (getTotalAmount() * (
+                                               coupon / hun)));
         }
-        if (coupon == 0) {
-            System.out.println("Tax:" + (getTotalAmount() * 0.15f));
+        if (coupon == ze) {
+            System.out.println("Tax:" + (getTotalAmount() * po));
         } else {
-            System.out.printf("Tax:%.1f\n",((getTotalAmount() - (getTotalAmount() * (coupon / 100.0f))) * 0.15f));
+            System.out.printf("Tax:%.1f\n", ((
+                                                 getTotalAmount() - (
+                                                         getTotalAmount() * (
+                                                                 coupon / hun)))
+                                             * po));
         }
         System.out.println("Payable amount: " + getpaybleAmount());
     }
 }
 /**
- * { item_description }
+ * { item_description }.
  */
 public final class Solution {
     public static void main(final String[] args) {
@@ -316,9 +337,10 @@ public final class Solution {
                 sc.showCatalog();
                 break;
             case "add":
+                final float zero = 0.0f;
                 values = token[1].split(",");
                 quantity = Integer.parseInt(values[1]);
-                sc.addtoCart(new item(values[0], quantity, 0.0f));
+                sc.addtoCart(new item(values[0], quantity, zero));
                 break;
             case "show":
                 sc.showCart();
@@ -327,20 +349,29 @@ public final class Solution {
                 System.out.println("totalAmount: " + sc.getTotalAmount());
                 break;
             case "remove":
+                final float zero1 = 0.0f;
                 values = token[1].split(",");
                 quantity = Integer.parseInt(values[1]);
-                sc.removefromCart(new item(values[0], quantity, 0.0f));
+                sc.removefromCart(new item(values[0], quantity, zero1));
                 break;
             case "coupon":
-                int disc = Integer.parseInt(token[1].substring(3, 5));
-                if (disc == 10 || disc == 20 || disc == 30 || disc == 50) {
+                final int ten = 10;
+                final int twenty = 20;
+                final int thirty = 30;
+                final int fifty = 50;
+                final int three = 3;
+                final int five = 5;
+                int disc = Integer.parseInt(token[1].substring(three, five));
+                if (disc == ten || disc == twenty ||
+                        disc == thirty || disc == fifty) {
                     sc.applyCoupon(disc);
                 } else {
                     System.out.println("Invalid coupon");
                 }
                 break;
             case "payableAmount":
-                System.out.println("Payable amount: " + sc.getpaybleAmount());
+                System.out.println(
+                    "Payable amount: " + sc.getpaybleAmount());
                 break;
             case "print":
                 sc.printInvoice();
