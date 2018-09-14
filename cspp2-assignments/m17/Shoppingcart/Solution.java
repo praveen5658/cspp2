@@ -233,7 +233,7 @@ public final class Solution {
                 if (disc == 10 || disc == 20 || disc == 30 || disc == 50) {
                     sc.applyCoupon(disc);
                 } else {
-                    System.out.println("Not a valid coupon");
+                    System.out.println("Invalid coupon");
                 }
                 break;
             case "payableAmount":
