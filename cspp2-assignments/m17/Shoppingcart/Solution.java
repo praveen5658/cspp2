@@ -178,7 +178,7 @@ class ShoppingCart {
         if (coupon == 0) {
             System.out.println("Tax:" + (getTotalAmount() * 0.15f));
         } else {
-            System.out.println("Tax:" + Math.round((getTotalAmount() * (coupon / 100.0f)) * 0.15f));
+            System.out.printf("Tax:%.1f",((getTotalAmount() * (coupon / 100.0f)) * 0.15f));
         }
         System.out.println("Payable amount: " + getpaybleAmount());
     }
