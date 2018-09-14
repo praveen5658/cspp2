@@ -161,11 +161,11 @@ class ShoppingCart {
         }
     }
     public float getpaybleAmount() {
-        System.out.println(coupon);
         if (coupon == 0) {
             return (getTotalAmount() * 1.15f);
         }
-        return ((getTotalAmount() / coupon) * 1.15f);
+        System.out.println();
+        return ((getTotalAmount() * (coupon / 100)) * 1.15f);
     }
     public void printInvoice() {
         System.out.println("Name" + "   " + "quantity" + "   " + "Price");
