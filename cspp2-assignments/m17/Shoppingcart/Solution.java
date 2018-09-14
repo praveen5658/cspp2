@@ -102,12 +102,13 @@ class ShoppingCart {
 		item[] sample = new item[cartsize-1];
 		for (int i = 0,j=0; i<cartsize-1;i++) {
 			if (!(cart[i].equals(item1))) {
-				sample[j] = cart[i];
-				j++;
+				if (cart[i].itemQuantity >= item1.itemQuantity) {
+					cart[i].itemQuantity -= item1.itemQuantity;
+				}
 			}
 		}
-		cart = sample.clone();
-		cartsize -= 1;
+		// cart = sample.clone();
+		// cartsize -= 1;
 		for (int k=0;k<catalogsize;k++) {
 			if (catalog[k].getitemName().equals(item1.getitemName())) {
 				catalog[k].itemQuantity += item1.itemQuantity;
