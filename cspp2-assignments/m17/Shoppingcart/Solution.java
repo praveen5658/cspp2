@@ -161,6 +161,7 @@ class ShoppingCart {
         }
     }
     public float getpaybleAmount() {
+        System.out.println(coupon);
         if (coupon == 0) {
             return (getTotalAmount() * 1.15f);
         }
