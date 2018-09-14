@@ -148,7 +148,7 @@ class ShoppingCart {
 			System.out.println("Disc%:"+(getTotalAmount()/coupon));
 		}
 		System.out.println("Tax:"+(getTotalAmount() * 0.15f));
-		System.out.println("Payble amount:" +getpaybleAmount());
+		System.out.println("Payable amount:" +getpaybleAmount());
 	}
 }
 
@@ -195,7 +195,7 @@ public final class Solution {
 				}
 				break;
 			case "payableAmount":
-				System.out.println("Payble amount:" + sc.getpaybleAmount());
+				System.out.println("Payable amount:" + sc.getpaybleAmount());
 			case "print":
 				sc.printInvoice();
 			}
