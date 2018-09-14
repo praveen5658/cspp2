@@ -164,7 +164,6 @@ class ShoppingCart {
         if (coupon == 0) {
             return (getTotalAmount() * 1.15f);
         }
-        System.out.println();
         return ((getTotalAmount() * (coupon / 100)) * 1.15f);
     }
     public void printInvoice() {
