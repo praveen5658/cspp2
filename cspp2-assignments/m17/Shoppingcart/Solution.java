@@ -135,11 +135,11 @@ class ShoppingCart {
      *
      * @param      Item1  The Item 1
      */
-    public void addtoCatalog(final Item Item1) {
+    public void addtoCatalog(final Item item1) {
         if (catalogsize == catalog.length) {
             resize();
         }
-        catalog[catalogsize++] = Item1;
+        catalog[catalogsize++] = item1;
     }
     /**
      * Shows the catalog.
@@ -154,7 +154,7 @@ class ShoppingCart {
      *
      * @param      Item1  The Item 1
      */
-    public void addtoCart(final Item Item1) {
+    public void addtoCart(final Item item1) {
         int k = 0;
         final int z = 0;
         if (cartsize == cart.length) {
@@ -162,8 +162,8 @@ class ShoppingCart {
         }
         int l = 0;
         for (int j = 0; j < cartsize; j++) {
-            if (cart[j].getitemName().equals(Item1.getitemName())) {
-                cart[j].itemQuantity += Item1.itemQuantity;
+            if (cart[j].getitemName().equals(item1.getitemName())) {
+                cart[j].itemQuantity += item1.itemQuantity;
                 l++;
                 break;
             }
@@ -171,17 +171,17 @@ class ShoppingCart {
         if (l == z) {
             for (int i = 0; i < catalogsize; i++) {
                 if (catalog[i].getitemName().equals(
-                            Item1.getitemName()) &&
-                        (catalog[i].itemQuantity >
-                         Item1.itemQuantity)) {
-                    cart[cartsize++] = Item1;
-                    catalog[i].itemQuantity -= Item1.itemQuantity;
+                            item1.getitemName())
+                        && (catalog[i].itemQuantity
+                            > item1.itemQuantity)) {
+                    cart[cartsize++] = item1;
+                    catalog[i].itemQuantity -= item1.itemQuantity;
                     break;
                 } else if (catalog[i].getitemName().equals(
-                               Item1.getitemName()) &&
-                           (catalog[i].itemQuantity ==
-                            Item1.itemQuantity)) {
-                    cart[cartsize++] = Item1;
+                               item1.getitemName())
+                           && (catalog[i].itemQuantity
+                               == item1.itemQuantity)) {
+                    cart[cartsize++] = item1;
                     removefromCatalog(catalog[i]);
                     break;
                 } else {
@@ -235,14 +235,14 @@ class ShoppingCart {
      *
      * @param      Item1  The Item 1
      */
-    public void removefromCart(final Item Item1) {
+    public void removefromCart(final Item item1) {
         // Item[] sample = new Item[cartsize-1];
         for (int i = 0; i < cartsize; i++) {
-            if ((cart[i].getitemName().equals(Item1.getitemName()))) {
-                if (cart[i].itemQuantity >= Item1.itemQuantity) {
-                    cart[i].itemQuantity -= Item1.itemQuantity;
+            if ((cart[i].getitemName().equals(item1.getitemName()))) {
+                if (cart[i].itemQuantity >= item1.itemQuantity) {
+                    cart[i].itemQuantity -= item1.itemQuantity;
                     if (cart[i].itemQuantity == 0) {
-                        removeelementfromCart(Item1);
+                        removeelementfromCart(item1);
                     }
                     break;
                 }
@@ -251,8 +251,8 @@ class ShoppingCart {
         // cart = sample.clone();
         // cartsize -= 1;
         for (int k = 0; k < catalogsize; k++) {
-            if (catalog[k].getitemName().equals(Item1.getitemName())) {
-                catalog[k].itemQuantity += Item1.itemQuantity;
+            if (catalog[k].getitemName().equals(item1.getitemName())) {
+                catalog[k].itemQuantity += item1.itemQuantity;
             }
         }
     }
@@ -261,10 +261,10 @@ class ShoppingCart {
      *
      * @param      Item1  The Item 1
      */
-    public void removeelementfromCart(Item Item1) {
+    public void removeelementfromCart(Item item1) {
         Item[] sample = new Item[cartsize - 1];
         for (int i = 0, j = 0; i < cartsize; i++) {
-            if (!(cart[i].getitemName().equals(Item1.getitemName()))) {
+            if (!(cart[i].getitemName().equals(item1.getitemName()))) {
                 sample[j] = cart[i];
                 j++;
             }
@@ -277,10 +277,10 @@ class ShoppingCart {
      *
      * @param      Item1  The Item 1
      */
-    public void removefromCatalog(Item Item1) {
+    public void removefromCatalog(Item item1) {
         Item[] sample = new Item[catalogsize - 1];
         for (int i = 0, j = 0; i < catalogsize; i++) {
-            if (!(catalog[i].equals(Item1))) {
+            if (!(catalog[i].equals(item1))) {
                 sample[j] = catalog[i];
                 j++;
             }
