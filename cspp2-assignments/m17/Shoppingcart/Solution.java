@@ -164,7 +164,6 @@ class ShoppingCart {
         if (coupon == 0) {
             return (getTotalAmount() * 1.15f);
         }
-        System.out.println(coupon);
         return ((getTotalAmount() * (coupon / 100.0f)) * 1.15f);
     }
     public void printInvoice() {
@@ -174,7 +173,7 @@ class ShoppingCart {
         if (coupon == 0) {
             System.out.println("Disc%:0.0");
         } else {
-            System.out.println("Disc%:" + (getTotalAmount() / coupon));
+            System.out.println("Disc%:" + (getTotalAmount() * (coupon / 100.0f)) * 1.15f);
         }
         System.out.println("Tax:" + (getTotalAmount() * 0.15f));
         System.out.println("Payable amount: " + getpaybleAmount());
