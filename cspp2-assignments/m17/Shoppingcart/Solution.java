@@ -18,6 +18,11 @@ class item {
 	public float getitemUnitPrice() {
 		return itemUnitPrice;
 	}
+	public String printString(final float quan) {
+		String s = itemName + " " + String.valueOf(
+			               itemQuantity) + " " + String.valueOf(quan);
+		return s;
+	}
 	public String toString() {
 		String s = "";
 		if (itemUnitPrice != 0.0) {
@@ -86,6 +91,15 @@ class ShoppingCart {
 			System.out.println(cart[i]);
 		}
 	}
+	public void printCart() {
+		for (int i = 0; i < cartsize; i++) {
+			for (int j = 0;j<catalogsize;j++) {
+				if (cart[i].getitemName().equals(catalog[j].getitemName())) {
+					System.out.println(cart[i].printString(catalog[j].itemUnitPrice));
+				}
+			}
+		}
+	}
 	public float getTotalAmount() {
 		float f = 0.0f;
 		for (int i = 0; i<cartsize;i++) {
@@ -139,8 +153,8 @@ class ShoppingCart {
 		return ((getTotalAmount()/coupon) * 1.15f);
 	}
 	public void printInvoice() {
-		System.out.println("Name"+"   "+"Quantity"+"   "+"Price");
-		showCart();
+		System.out.println("Name"+"   "+"quantity"+"   "+"Price");
+		printCart();
 		System.out.println("Total:" +getTotalAmount());
 		if (coupon == 0) {
 			System.out.println("Disc%:0.0");
