@@ -133,7 +133,7 @@ class ShoppingCart {
     /**
      * { function_description }.
      *
-     * @param      Item1  The Item 1
+     * @param      item1  The Item 1
      */
     public void addtoCatalog(final Item item1) {
         if (catalogsize == catalog.length) {
@@ -152,7 +152,7 @@ class ShoppingCart {
     /**
      * { function_description }.
      *
-     * @param      Item1  The Item 1
+     * @param      item1  The Item 1
      */
     public void addtoCart(final Item item1) {
         int k = 0;
@@ -233,7 +233,7 @@ class ShoppingCart {
     /**
      * { function_description }.
      *
-     * @param      Item1  The Item 1
+     * @param      item1  The Item 1
      */
     public void removefromCart(final Item item1) {
         // Item[] sample = new Item[cartsize-1];
@@ -259,9 +259,9 @@ class ShoppingCart {
     /**
      * { function_description }.
      *
-     * @param      Item1  The Item 1
+     * @param      item1  The Item 1
      */
-    public void removeelementfromCart(Item item1) {
+    public void removeelementfromCart(final Item item1) {
         Item[] sample = new Item[cartsize - 1];
         for (int i = 0, j = 0; i < cartsize; i++) {
             if (!(cart[i].getitemName().equals(item1.getitemName()))) {
@@ -275,9 +275,9 @@ class ShoppingCart {
     /**
      * { function_description }.
      *
-     * @param      Item1  The Item 1
+     * @param      item1  The Item 1
      */
-    public void removefromCatalog(Item item1) {
+    public void removefromCatalog(final Item item1) {
         Item[] sample = new Item[catalogsize - 1];
         for (int i = 0, j = 0; i < catalogsize; i++) {
             if (!(catalog[i].equals(item1))) {
@@ -344,6 +344,17 @@ class ShoppingCart {
  * { Item_description }.
  */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution () {
+
+    }
+    /**
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int testcases = Integer.parseInt(scan.nextLine());
@@ -386,8 +397,8 @@ public final class Solution {
                 final int three = 3;
                 final int five = 5;
                 int disc = Integer.parseInt(token[1].substring(three, five));
-                if (disc == ten || disc == twenty ||
-                        disc == thirty || disc == fifty) {
+                if (disc == ten || disc == twenty
+                        || disc == thirty || disc == fifty) {
                     sc.applyCoupon(disc);
                 } else {
                     System.out.println("Invalid coupon");
