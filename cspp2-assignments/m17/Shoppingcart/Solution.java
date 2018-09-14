@@ -179,7 +179,7 @@ public final class Solution {
 				sc.showCart();
 				break;
 			case "totalAmount":
-				System.out.println("totalAmount:" + sc.getTotalAmount());
+				System.out.println("totalAmount: " + sc.getTotalAmount());
 				break;
 			case "remove":
 				values = token[1].split(",");
@@ -196,8 +196,10 @@ public final class Solution {
 				break;
 			case "payableAmount":
 				System.out.println("Payable amount: " + sc.getpaybleAmount());
+				break;
 			case "print":
 				sc.printInvoice();
+				break;
 			}
 		}
 	}
