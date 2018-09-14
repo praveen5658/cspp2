@@ -10,9 +10,18 @@ import java.util.Arrays;
  * Class for Item.
  */
 class Item {
-    private String ItemName;
-    public int ItemQuantity;
-    public float ItemUnitPrice;
+    /**
+     * { var_description }
+     */
+    private String itemName;
+    /**
+     * { var_description }
+     */
+    public int itemQuantity;
+    /**
+     * { var_description }
+     */
+    public float itemUnitPrice;
     /**
      * Constructs the object.
      *
@@ -21,33 +30,33 @@ class Item {
      * @param      price     The price
      */
     Item(final String name, final int quantity, final float price) {
-        ItemName = name;
-        ItemQuantity = quantity;
-        ItemUnitPrice = price;
+        itemName = name;
+        itemQuantity = quantity;
+        itemUnitPrice = price;
     }
     /**
      * { function_description }.
      *
      * @return     { description_of_the_return_value }.
      */
-    public String getItemName() {
-        return ItemName;
+    public String getitemName() {
+        return itemName;
     }
     /**
      * { function_description }.
      *
      * @return     { description_of_the_return_value }.
      */
-    public int getItemQuantity() {
-        return ItemQuantity;
+    public int getitemQuantity() {
+        return itemQuantity;
     }
     /**
      * { function_description }.
      *
      * @return     { description_of_the_return_value }.
      */
-    public float getItemUnitPrice() {
-        return ItemUnitPrice;
+    public float getitemUnitPrice() {
+        return itemUnitPrice;
     }
     /**
      * { function_description }.
@@ -57,8 +66,8 @@ class Item {
      * @return     { description_of_the_return_value }.
      */
     public String printString(final float quan) {
-        String s = ItemName + " " + String.valueOf(
-                       ItemQuantity) + " " + String.valueOf(quan);
+        String s = itemName + " " + String.valueOf(
+                       itemQuantity) + " " + String.valueOf(quan);
         return s;
     }
     /**
@@ -69,12 +78,12 @@ class Item {
     public String toString() {
         final float zero = 0.0f;
         String s = "";
-        if (ItemUnitPrice != zero) {
-            s = ItemName + " " + String.valueOf(
-                    ItemQuantity) + " " + String.valueOf(ItemUnitPrice);
+        if (itemUnitPrice != zero) {
+            s = itemName + " " + String.valueOf(
+                    itemQuantity) + " " + String.valueOf(itemUnitPrice);
         } else {
-            s = ItemName + " " + String.valueOf(
-                    ItemQuantity);
+            s = itemName + " " + String.valueOf(
+                    itemQuantity);
         }
         return s;
     }
@@ -138,25 +147,25 @@ class ShoppingCart {
         }
         int l = 0;
         for (int j = 0; j < cartsize; j++) {
-            if (cart[j].getItemName().equals(Item1.getItemName())) {
-                cart[j].ItemQuantity += Item1.ItemQuantity;
+            if (cart[j].getitemName().equals(Item1.getitemName())) {
+                cart[j].itemQuantity += Item1.itemQuantity;
                 l++;
                 break;
             }
         }
         if (l == z) {
             for (int i = 0; i < catalogsize; i++) {
-                if (catalog[i].getItemName().equals(
-                            Item1.getItemName()) &&
-                        (catalog[i].ItemQuantity >
-                         Item1.ItemQuantity)) {
+                if (catalog[i].getitemName().equals(
+                            Item1.getitemName()) &&
+                        (catalog[i].itemQuantity >
+                         Item1.itemQuantity)) {
                     cart[cartsize++] = Item1;
-                    catalog[i].ItemQuantity -= Item1.ItemQuantity;
+                    catalog[i].itemQuantity -= Item1.itemQuantity;
                     break;
-                } else if (catalog[i].getItemName().equals(
-                               Item1.getItemName()) &&
-                           (catalog[i].ItemQuantity ==
-                            Item1.ItemQuantity)) {
+                } else if (catalog[i].getitemName().equals(
+                               Item1.getitemName()) &&
+                           (catalog[i].itemQuantity ==
+                            Item1.itemQuantity)) {
                     cart[cartsize++] = Item1;
                     removefromCatalog(catalog[i]);
                     break;
@@ -180,10 +189,10 @@ class ShoppingCart {
     public void printCart() {
         for (int i = 0; i < cartsize; i++) {
             for (int j = 0; j < catalogsize; j++) {
-                if (cart[i].getItemName().equals(
-                            catalog[j].getItemName())) {
+                if (cart[i].getitemName().equals(
+                            catalog[j].getitemName())) {
                     System.out.println(cart[i].printString(
-                                           catalog[j].ItemUnitPrice));
+                                           catalog[j].itemUnitPrice));
                 }
             }
         }
@@ -197,9 +206,9 @@ class ShoppingCart {
         float f = 0.0f;
         for (int i = 0; i < cartsize; i++) {
             for (int j = 0; j < catalogsize; j++) {
-                if (cart[i].getItemName().equals(
-                            catalog[j].getItemName())) {
-                    f += cart[i].ItemQuantity * catalog[j].ItemUnitPrice;
+                if (cart[i].getitemName().equals(
+                            catalog[j].getitemName())) {
+                    f += cart[i].itemQuantity * catalog[j].itemUnitPrice;
                     break;
                 }
             }
@@ -214,10 +223,10 @@ class ShoppingCart {
     public void removefromCart(final Item Item1) {
         // Item[] sample = new Item[cartsize-1];
         for (int i = 0; i < cartsize; i++) {
-            if ((cart[i].getItemName().equals(Item1.getItemName()))) {
-                if (cart[i].ItemQuantity >= Item1.ItemQuantity) {
-                    cart[i].ItemQuantity -= Item1.ItemQuantity;
-                    if (cart[i].ItemQuantity == 0) {
+            if ((cart[i].getitemName().equals(Item1.getitemName()))) {
+                if (cart[i].itemQuantity >= Item1.itemQuantity) {
+                    cart[i].itemQuantity -= Item1.itemQuantity;
+                    if (cart[i].itemQuantity == 0) {
                         removeelementfromCart(Item1);
                     }
                     break;
@@ -227,8 +236,8 @@ class ShoppingCart {
         // cart = sample.clone();
         // cartsize -= 1;
         for (int k = 0; k < catalogsize; k++) {
-            if (catalog[k].getItemName().equals(Item1.getItemName())) {
-                catalog[k].ItemQuantity += Item1.ItemQuantity;
+            if (catalog[k].getitemName().equals(Item1.getitemName())) {
+                catalog[k].itemQuantity += Item1.itemQuantity;
             }
         }
     }
@@ -240,7 +249,7 @@ class ShoppingCart {
     public void removeelementfromCart(Item Item1) {
         Item[] sample = new Item[cartsize - 1];
         for (int i = 0, j = 0; i < cartsize; i++) {
-            if (!(cart[i].getItemName().equals(Item1.getItemName()))) {
+            if (!(cart[i].getitemName().equals(Item1.getitemName()))) {
                 sample[j] = cart[i];
                 j++;
             }
