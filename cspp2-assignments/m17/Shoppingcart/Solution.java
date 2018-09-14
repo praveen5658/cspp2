@@ -100,7 +100,7 @@ class ShoppingCart {
 	}
 	public void removefromCart(item item1) {
 		item[] sample = new item[cartsize-1];
-		for (int i = 0; i<cartsize-1;i++) {
+		for (int i = 0; i<cartsize;i++) {
 			if ((cart[i].getitemName().equals(item1.getitemName()))) {
 				if (cart[i].itemQuantity >= item1.itemQuantity) {
 					cart[i].itemQuantity -= item1.itemQuantity;
