@@ -175,7 +175,11 @@ class ShoppingCart {
         } else {
             System.out.println("Disc%:" + (getTotalAmount() * (coupon / 100.0f)));
         }
-        System.out.println("Tax:" + (getTotalAmount() * (coupon / 100.0f)) * 0.15f);
+        if (coupon == 0) {
+            System.out.println("Tax:" + (getTotalAmount() * 0.15f));
+        } else {
+            System.out.println("Tax:" + (getTotalAmount() * (coupon / 100.0f)) * 0.15f);
+        }
         System.out.println("Payable amount: " + getpaybleAmount());
     }
 }
