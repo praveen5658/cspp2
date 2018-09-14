@@ -104,6 +104,7 @@ class ShoppingCart {
 			if (!(cart[i].equals(item1))) {
 				if (cart[i].itemQuantity >= item1.itemQuantity) {
 					cart[i].itemQuantity -= item1.itemQuantity;
+					break;
 				}
 			}
 		}
