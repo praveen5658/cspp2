@@ -80,9 +80,6 @@ class ShoppingCart {
 				k++;
 			}
 		}
-		if (k != 0) {
-			System.out.println("Item not existed");
-		}
 	}
 	public void showCart() {
 		for (int i = 0; i < cartsize; i++) {
