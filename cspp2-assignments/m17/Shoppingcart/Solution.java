@@ -1,28 +1,71 @@
+/**
+ * { item_description }
+ */
 import java.util.Scanner;
+/**
+ * { item_description }
+ */
 import java.util.Arrays;
+/**
+ * Class for item.
+ */
 class item {
     private String itemName;
     public int itemQuantity;
     public float itemUnitPrice;
+    /**
+     * Constructs the object.
+     *
+     * @param      name      The name
+     * @param      quantity  The quantity
+     * @param      price     The price
+     */
     item(String name, int quantity, float price) {
         itemName = name;
         itemQuantity = quantity;
         itemUnitPrice = price;
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String getitemName() {
         return itemName;
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int getitemQuantity() {
         return itemQuantity;
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public float getitemUnitPrice() {
         return itemUnitPrice;
     }
+    /**
+     * { function_description }
+     *
+     * @param      quan  The quan
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String printString(final float quan) {
         String s = itemName + " " + String.valueOf(
                        itemQuantity) + " " + String.valueOf(quan);
         return s;
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String s = "";
         if (itemUnitPrice != 0.0) {
@@ -35,36 +78,56 @@ class item {
         return s;
     }
 }
-
-
+/**
+ * Class for shopping cartesian.
+ */
 class ShoppingCart {
     private item[] catalog;
     private item[] cart;
     private int catalogsize;
     private int cartsize;
     private int coupon;
-    ShoppingCart() {
+    /**
+     * Constructs the object.
+     */
+    protected ShoppingCart() {
         catalog = new item[10];
         cart = new item[10];
         catalogsize = 0;
         cartsize = 0;
         coupon = 0;
     }
+    /**
+     * { function_description }
+     */
     public void resize() {
         catalog = Arrays.copyOf(catalog, catalogsize + 1);
         cart = Arrays.copyOf(cart, cartsize + 1);
     }
+    /**
+     * { function_description }
+     *
+     * @param      item1  The item 1
+     */
     public void addtoCatalog(item item1) {
         if (catalogsize == catalog.length) {
             resize();
         }
         catalog[catalogsize++] = item1;
     }
+    /**
+     * Shows the catalog.
+     */
     public void showCatalog() {
         for (int i = 0; i < catalogsize; i++) {
             System.out.println(catalog[i]);
         }
     }
+    /**
+     * { function_description }
+     *
+     * @param      item1  The item 1
+     */
     public void addtoCart(item item1) {
         int k = 0;
         if (cartsize == cart.length) {
@@ -96,11 +159,17 @@ class ShoppingCart {
             }
         }
     }
+    /**
+     * Shows the cartesian.
+     */
     public void showCart() {
         for (int i = 0; i < cartsize; i++) {
             System.out.println(cart[i]);
         }
     }
+    /**
+     * { function_description }
+     */
     public void printCart() {
         for (int i = 0; i < cartsize; i++) {
             for (int j = 0; j < catalogsize; j++) {
@@ -110,6 +179,11 @@ class ShoppingCart {
             }
         }
     }
+    /**
+     * Gets the total amount.
+     *
+     * @return     The total amount.
+     */
     public float getTotalAmount() {
         float f = 0.0f;
         for (int i = 0; i < cartsize; i++) {
@@ -122,6 +196,11 @@ class ShoppingCart {
         }
         return f;
     }
+    /**
+     * { function_description }
+     *
+     * @param      item1  The item 1
+     */
     public void removefromCart(item item1) {
         // item[] sample = new item[cartsize-1];
         for (int i = 0; i < cartsize; i++) {
@@ -143,6 +222,11 @@ class ShoppingCart {
             }
         }
     }
+    /**
+     * { function_description }
+     *
+     * @param      item1  The item 1
+     */
     public void removeelementfromCart(item item1) {
         item[] sample = new item[cartsize - 1];
         for (int i = 0, j = 0; i < cartsize; i++) {
@@ -154,6 +238,11 @@ class ShoppingCart {
         cart = sample.clone();
         cartsize -= 1;
     }
+    /**
+     * { function_description }
+     *
+     * @param      item1  The item 1
+     */
     public void removefromCatalog(item item1) {
         item[] sample = new item[catalogsize - 1];
         for (int i = 0, j = 0; i < catalogsize; i++) {
@@ -165,17 +254,30 @@ class ShoppingCart {
         catalog = sample.clone();
         catalogsize -= 1;
     }
+    /**
+     * { function_description }
+     *
+     * @param      disc  The disc
+     */
     public void applyCoupon(final int disc) {
         if (coupon < disc) {
             coupon = disc;
         }
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public float getpaybleAmount() {
         if (coupon == 0) {
             return (getTotalAmount() * 1.15f);
         }
         return ((getTotalAmount() - (getTotalAmount() * (coupon / 100.0f))) * 1.15f);
     }
+    /**
+     * { function_description }
+     */
     public void printInvoice() {
         System.out.println("Name" + "   " + "quantity" + "   " + "Price");
         printCart();
@@ -193,10 +295,11 @@ class ShoppingCart {
         System.out.println("Payable amount: " + getpaybleAmount());
     }
 }
-
-
+/**
+ * { item_description }
+ */
 public final class Solution {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int testcases = Integer.parseInt(scan.nextLine());
         ShoppingCart sc = new ShoppingCart();
@@ -241,6 +344,8 @@ public final class Solution {
                 break;
             case "print":
                 sc.printInvoice();
+                break;
+            default :
                 break;
             }
         }
