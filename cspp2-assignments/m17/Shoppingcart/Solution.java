@@ -11,15 +11,15 @@ import java.util.Arrays;
  */
 class Item {
     /**
-     * { var_description }
+     * { var_description }.
      */
     private String itemName;
     /**
-     * { var_description }
+     * { var_description }.
      */
-    public int itemQuantity;
+    protected int itemQuantity;
     /**
-     * { var_description }
+     * { var_description }.
      */
     public float itemUnitPrice;
     /**
