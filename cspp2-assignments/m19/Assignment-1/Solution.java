@@ -123,11 +123,11 @@ class Quiz {
         System.out.println(String.valueOf(questionCount) + " are added to the quiz");
     }
     public void readChoice(final Scanner s, final int choiceCount) {
-        int choice;
-        String[] t;
+        String choice;
+        String t;
         for (int i = 0 ; i < choiceCount; i++) {
-            t = s.nextLine().split(" ");
-            choice = Integer.parseInt(t[1]);
+            t = s.nextLine();
+            choice = t;
             score[i] = questions[i].checkChoice(choice);
         }
         for (int i = 0; i < size; i++) {
@@ -171,8 +171,8 @@ class Question {
         this.maxMarks = maxmarks;
         this.penalityMarks = penality;
     }
-    public int checkChoice(final int choice) {
-        if (this.correctAnswer == choice) {
+    public int checkChoice(final String choice) {
+        if (this.choice[correctAnswer - 1].equals(choice)) {
             return this.maxMarks;
         } else {
             return this.penalityMarks;
