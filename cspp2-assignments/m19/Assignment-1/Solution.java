@@ -120,11 +120,17 @@ class Quiz {
             if (tokens.length == 5) {
                 choice = tokens[1].split(",");
                 correctAnswer = Integer.parseInt(tokens[2]);
-                maxMarks = Integer.parseInt(tokens[3]);
-                penalityMarks = Integer.parseInt(tokens[4]);
-                questions[size] = new Question();
-                questions[size].addQuestion(tokens[0], choice, correctAnswer, maxMarks, penalityMarks);
-                size ++;
+                if (correctAnswer <= tokens.length) {
+                    maxMarks = Integer.parseInt(tokens[3]);
+                    penalityMarks = Integer.parseInt(tokens[4]);
+                    questions[size] = new Question();
+                    questions[size].addQuestion(tokens[0], choice, correctAnswer, maxMarks, penalityMarks);
+                    size ++;
+                }
+                else {
+                    System.out.println("Error! Correct answer choice number is out of range for question text 1");
+                    k++;
+                }
             } else {
                 System.out.println("Error! Malformed question");
                 k++;
