@@ -117,13 +117,18 @@ class Quiz {
         int penalityMarks;
         for (int i = 0; i < questionCount; i++) {
             tokens = s.nextLine().split(":");
-            choice = tokens[1].split(",");
-            correctAnswer = Integer.parseInt(tokens[2]);
-            maxMarks = Integer.parseInt(tokens[3]);
-            penalityMarks = Integer.parseInt(tokens[4]);
-            questions[size] = new Question();
-            questions[size].addQuestion(tokens[0], choice, correctAnswer, maxMarks, penalityMarks);
-            size ++;
+            if (tokens.length ==5) {
+                choice = tokens[1].split(",");
+                correctAnswer = Integer.parseInt(tokens[2]);
+                maxMarks = Integer.parseInt(tokens[3]);
+                penalityMarks = Integer.parseInt(tokens[4]);
+                questions[size] = new Question();
+                questions[size].addQuestion(tokens[0], choice, correctAnswer, maxMarks, penalityMarks);
+                size ++;
+            }
+            else {
+                System.out.println("Error! Malformed question");
+            }
         }
         System.out.println(String.valueOf(questionCount) + " are added to the quiz");
     }
