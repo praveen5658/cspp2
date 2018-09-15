@@ -117,7 +117,7 @@ class Quiz {
         int penalityMarks;
         for (int i = 0; i < questionCount; i++) {
             tokens = s.nextLine().split(":");
-            if (tokens.length == 5) {
+            if (tokens.length == 5 && tokens[0] != null) {
                 choice = tokens[1].split(",");
                 correctAnswer = Integer.parseInt(tokens[2]);
                 if (choice.length >= 2) {
