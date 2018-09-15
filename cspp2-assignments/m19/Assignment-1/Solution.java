@@ -141,18 +141,18 @@ class Quiz {
             System.out.println(questions[i].getQuestion());
             if (score[i] > 0) {
                 System.out.print("Correct Answer! - Marks Awarded: ");
-                System.out.print(questions[i].getmaxMarks());
+                System.out.print(String.valueOf(questions[i].getmaxMarks()));
                 System.out.println();
             } else {
                 System.out.print("Wrong Answer! - Penalty: ");
-                System.out.print(score[i]);
+                System.out.print(String.valueOf(score[i]));
                 System.out.println();
             }
         }
         for (int j = 0; j < score.length; j++) {
             sc += score[j];
         }
-        System.out.println("Total Score: " + sc);
+        System.out.println("Total Score: " + String.valueOf(sc));
     }
 }
 class Question {
