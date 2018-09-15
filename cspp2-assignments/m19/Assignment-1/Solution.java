@@ -62,10 +62,9 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        if (questionCount!=0) {
+        if (questionCount != 0) {
             quiz.addQuestions(s, questionCount);
-        }
-        else {
+        } else {
             System.out.println("Quiz does not have questions");
         }
     }
@@ -111,13 +110,14 @@ class Quiz {
     }
     public void addQuestions(final Scanner s, final int questionCount) {
         String[] tokens;
+        int k = 0;
         String[] choice;
         int correctAnswer;
         int maxMarks;
         int penalityMarks;
         for (int i = 0; i < questionCount; i++) {
             tokens = s.nextLine().split(":");
-            if (tokens.length ==5) {
+            if (tokens.length == 5) {
                 choice = tokens[1].split(",");
                 correctAnswer = Integer.parseInt(tokens[2]);
                 maxMarks = Integer.parseInt(tokens[3]);
@@ -125,15 +125,18 @@ class Quiz {
                 questions[size] = new Question();
                 questions[size].addQuestion(tokens[0], choice, correctAnswer, maxMarks, penalityMarks);
                 size ++;
-            }
-            else {
+            } else {
                 System.out.println("Error! Malformed question");
+                k++;
+                break;
             }
         }
-        System.out.println(String.valueOf(questionCount) + " are added to the quiz");
+        if (k == 0) {
+            System.out.println(String.valueOf(questionCount) + " are added to the quiz");
+        }
     }
     public void readChoice(final Scanner s, final int choiceCount) {
-        if (size != 0){
+        if (size != 0) {
             String choice;
             String t;
             for (int i = 0 ; i < choiceCount; i++) {
@@ -148,7 +151,7 @@ class Quiz {
         }
     }
     public void report() {
-        if (size !=0) {
+        if (size != 0) {
             int sc = 0;
             for (int i = 0; i < size; i++) {
                 System.out.println(questions[i].getQuestion());
