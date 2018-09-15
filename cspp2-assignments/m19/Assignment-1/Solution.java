@@ -186,18 +186,18 @@ class Quiz {
                 System.out.println(questions[i].getQuestion());
                 if (score[i] > 0) {
                     System.out.print(" Correct Answer! - Marks Awarded: ");
-                    System.out.print(Integer.parseInt(String.valueOf(questions[i].getmaxMarks())));
+                    System.out.print(String.valueOf(questions[i].getmaxMarks()));
                     System.out.println();
                 } else {
                     System.out.print(" Wrong Answer! - Penalty: ");
-                    System.out.print(Integer.parseInt(String.valueOf(score[i])));
+                    System.out.print(String.valueOf(score[i]));
                     System.out.println();
                 }
             }
             for (int j = 0; j < score.length; j++) {
                 sc += score[j];
             }
-            System.out.println("Total Score: " + Integer.parseInt(String.valueOf(sc)));
+            System.out.println("Total Score: " +(String.valueOf(sc)));
         }
     }
 }
@@ -226,7 +226,7 @@ class Question {
     }
     public String toString() {
         String s = questionText;
-        s += "(" + Integer.parseInt(String.valueOf(this.maxMarks)) + ")";
+        s += "(" + (String.valueOf(this.maxMarks)) + ")";
         s += '\n';
         for (int j = 0; j < choice.length; j++) {
             s += choice[j] + "\t";
