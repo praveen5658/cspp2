@@ -120,7 +120,7 @@ class Quiz {
             if (tokens.length == 5) {
                 choice = tokens[1].split(",");
                 correctAnswer = Integer.parseInt(tokens[2]);
-                if (tokens.length >= 2) {
+                if (choice.length >= 2) {
                     if (correctAnswer <= tokens.length) {
                         maxMarks = Integer.parseInt(tokens[3]);
                         penalityMarks = Integer.parseInt(tokens[4]);
