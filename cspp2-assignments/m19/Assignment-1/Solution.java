@@ -62,7 +62,12 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        quiz.addQuestions(s, questionCount);
+        if (questionCount!=0) {
+            quiz.addQuestions(s, questionCount);
+        }
+        else {
+            System.out.println("Quiz does not have questions");
+        }
     }
 
     /**
@@ -123,36 +128,40 @@ class Quiz {
         System.out.println(String.valueOf(questionCount) + " are added to the quiz");
     }
     public void readChoice(final Scanner s, final int choiceCount) {
-        String choice;
-        String t;
-        for (int i = 0 ; i < choiceCount; i++) {
-            t = s.nextLine();
-            choice = t;
-            score[i] = questions[i].checkChoice(choice);
-        }
-        for (int i = 0; i < size; i++) {
-            System.out.println(questions[i]);
-            System.out.println();
-        }
-    }
-    public void report() {
-        int sc = 0;
-        for (int i = 0; i < size; i++) {
-            System.out.println(questions[i].getQuestion());
-            if (score[i] > 0) {
-                System.out.print(" Correct Answer! - Marks Awarded: ");
-                System.out.print(String.valueOf(questions[i].getmaxMarks()));
-                System.out.println();
-            } else {
-                System.out.print(" Wrong Answer! - Penalty: ");
-                System.out.print(String.valueOf(score[i]));
+        if (size != 0){
+            String choice;
+            String t;
+            for (int i = 0 ; i < choiceCount; i++) {
+                t = s.nextLine();
+                choice = t;
+                score[i] = questions[i].checkChoice(choice);
+            }
+            for (int i = 0; i < size; i++) {
+                System.out.println(questions[i]);
                 System.out.println();
             }
         }
-        for (int j = 0; j < score.length; j++) {
-            sc += score[j];
+    }
+    public void report() {
+        if (size !=0) {
+            int sc = 0;
+            for (int i = 0; i < size; i++) {
+                System.out.println(questions[i].getQuestion());
+                if (score[i] > 0) {
+                    System.out.print(" Correct Answer! - Marks Awarded: ");
+                    System.out.print(String.valueOf(questions[i].getmaxMarks()));
+                    System.out.println();
+                } else {
+                    System.out.print(" Wrong Answer! - Penalty: ");
+                    System.out.print(String.valueOf(score[i]));
+                    System.out.println();
+                }
+            }
+            for (int j = 0; j < score.length; j++) {
+                sc += score[j];
+            }
+            System.out.println("Total Score: " + String.valueOf(sc));
         }
-        System.out.println("Total Score: " + String.valueOf(sc));
     }
 }
 class Question {
