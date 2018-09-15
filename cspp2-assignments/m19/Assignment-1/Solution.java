@@ -116,6 +116,7 @@ class Quiz {
             correctAnswer = Integer.parseInt(tokens[2]);
             maxMarks = Integer.parseInt(tokens[3]);
             penalityMarks = Integer.parseInt(tokens[4]);
+            questions[size] = new Question();
             questions[size].addQuestion(tokens[0], choice, correctAnswer, maxMarks, penalityMarks);
             size ++;
         }
@@ -160,7 +161,7 @@ class Question {
     private int correctAnswer;
     private int maxMarks;
     private int penalityMarks;
-    private Question() {
+    protected Question() {
 
     }
     public void addQuestion(final String qt, final String[] c, final int ans, final int maxmarks, final int penality) {
