@@ -110,15 +110,19 @@ class Quiz {
     }
     public void addQuestions(final Scanner s, final int questionCount) {
         String[] tokens;
+        String st;
+        char[] star;
         int k = 0;
         String[] choice;
         int correctAnswer;
         int maxMarks;
         int penalityMarks;
         for (int i = 0; i < questionCount; i++) {
-            tokens = s.nextLine().split(":");
+            st = s.nextLine();
+            star = st.toCharArray();
+            tokens = st.split(":");
             // System.out.print(tokens[0]);
-            if (tokens.length == 5 && tokens[0] != null) {
+            if (tokens.length == 5 && star[0]!=':') {
                 choice = tokens[1].split(",");
                 correctAnswer = Integer.parseInt(tokens[2]);
                 if (choice.length >= 2) {
