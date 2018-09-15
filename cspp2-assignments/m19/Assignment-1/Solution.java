@@ -116,7 +116,8 @@ class Quiz {
             correctAnswer = Integer.parseInt(tokens[2]);
             maxMarks = Integer.parseInt(tokens[3]);
             penalityMarks = Integer.parseInt(tokens[4]);
-            questions[size++].addQuestion(tokens[0], choice, correctAnswer, maxMarks, penalityMarks);
+            questions[size].addQuestion(tokens[0], choice, correctAnswer, maxMarks, penalityMarks);
+            size ++;
         }
         System.out.println(String.valueOf(questionCount) + " are added to the quiz");
     }
