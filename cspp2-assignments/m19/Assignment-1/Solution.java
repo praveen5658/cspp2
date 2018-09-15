@@ -229,7 +229,7 @@ class Question {
         s += "(" + Integer.parseInt(String.valueOf(this.maxMarks)) + ")";
         s += '\n';
         for (int j = 0; j < choice.length; j++) {
-            s += choice[j] + "        ";
+            s += choice[j] + "\t\t";
         }
         return s;
     }
