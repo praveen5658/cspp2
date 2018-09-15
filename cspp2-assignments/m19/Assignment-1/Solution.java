@@ -140,11 +140,11 @@ class Quiz {
         for (int i = 0; i < size; i++) {
             System.out.println(questions[i].getQuestion());
             if (score[i] > 0) {
-                System.out.print("Correct Answer! - Marks Awarded: ");
+                System.out.print(" Correct Answer! - Marks Awarded: ");
                 System.out.print(String.valueOf(questions[i].getmaxMarks()));
                 System.out.println();
             } else {
-                System.out.print("Wrong Answer! - Penalty: ");
+                System.out.print(" Wrong Answer! - Penalty: ");
                 System.out.print(String.valueOf(score[i]));
                 System.out.println();
             }
