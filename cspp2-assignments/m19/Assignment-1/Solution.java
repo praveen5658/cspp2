@@ -100,9 +100,9 @@ class Quiz {
     private int[] score;
     protected Quiz() {
         // questionText = new String();
-        questions = new Question[10];
+        questions = new Question[20];
         size = 0;
-        score = new int[10];
+        score = new int[20];
     }
     public void addQuestions(final Scanner s, final int questionCount) {
         String[] tokens;
