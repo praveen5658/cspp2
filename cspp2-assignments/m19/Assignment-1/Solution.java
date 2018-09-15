@@ -124,19 +124,23 @@ class Quiz {
                 if (choice.length >= 2) {
                     if (correctAnswer <= tokens.length) {
                         maxMarks = Integer.parseInt(tokens[3]);
-                        penalityMarks = Integer.parseInt(tokens[4]);
-                        if (penalityMarks <= 0) {
-                            questions[size] = new Question();
-                            questions[size].addQuestion(tokens[0], choice, correctAnswer, maxMarks, penalityMarks);
-                            size ++;
-                        }
-                        else {
-                            System.out.println("Invalid penalty for " + tokens[0]);
+                        if (maxMarks >= 0) {
+                            penalityMarks = Integer.parseInt(tokens[4]);
+                            if (penalityMarks <= 0) {
+                                questions[size] = new Question();
+                                questions[size].addQuestion(tokens[0], choice, correctAnswer, maxMarks, penalityMarks);
+                                size ++;
+                            } else {
+                                System.out.println("Invalid penalty for " + tokens[0]);
+                                k++;
+                                break;
+                            }
+                        } else {
+                            System.out.println("Invalid max marks for " + tokens[0]);
                             k++;
                             break;
                         }
-                    }
-                    else {
+                    } else {
                         System.out.println("Error! Correct answer choice number is out of range for question text 1");
                         k++;
                         break;
