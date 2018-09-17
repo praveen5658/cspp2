@@ -138,6 +138,8 @@ class Quiz {
         final int five = 5;
         final int two = 2;
         final int zero = 0;
+        final int three = 3;
+        final int four = 4;
         String st;
         char[] star;
         int k = 0;
@@ -155,15 +157,15 @@ class Quiz {
                 correctAnswer = Integer.parseInt(tokens[2]);
                 if (choice.length >= two) {
                     if (correctAnswer <= tokens.length) {
-                        maxMarks = Integer.parseInt(tokens[3]);
+                        maxMarks = Integer.parseInt(tokens[three]);
                         if (maxMarks >= zero) {
-                            penalityMarks = Integer.parseInt(tokens[4]);
+                            penalityMarks = Integer.parseInt(tokens[four]);
                             if (penalityMarks <= zero) {
                                 questions[size] = new Question();
                                 questions[size].addQuestion(
                                     tokens[0], choice, correctAnswer,
                                     maxMarks, penalityMarks);
-                                size ++;
+                                size++;
                             } else {
                                 System.out.println(
                                     "Invalid penalty for " + tokens[0]);
@@ -197,7 +199,7 @@ class Quiz {
         }
         if (k == zero) {
             System.out.println(
-                String.valueOf(questionCount) 
+                String.valueOf(questionCount)
                 + " are added to the quiz");
         }
     }
@@ -212,7 +214,7 @@ class Quiz {
         if (size != zero) {
             String choice;
             String t;
-            for (int i = 0 ; i < choiceCount; i++) {
+            for (int i = 0; i < choiceCount; i++) {
                 t = s.nextLine();
                 choice = t;
                 score[i] = questions[i].checkChoice(choice);
@@ -302,12 +304,12 @@ class Question {
     /**
      * { Check for choice }.
      *
-     * @param      choice  The choice
+     * @param      choice1  The choice
      *
      * @return     { Integer }.
      */
-    public int checkChoice(final String choice) {
-        if (this.choice[correctAnswer - 1].equals(choice)) {
+    public int checkChoice(final String choice1) {
+        if (this.choice[correctAnswer - 1].equals(choice1)) {
             return this.maxMarks;
         } else {
             return this.penalityMarks;
