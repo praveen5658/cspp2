@@ -121,9 +121,10 @@ class Quiz {
      */
     protected Quiz() {
         // questionText = new String();
-        questions = new Question[20];
+        final int twenty = 20;
+        questions = new Question[twenty];
         size = 0;
-        score = new int[20];
+        score = new int[twenty];
     }
     /**
      * Adds questions.
@@ -134,6 +135,9 @@ class Quiz {
     public void addQuestions(
         final Scanner s, final int questionCount) {
         String[] tokens;
+        final int five = 5;
+        final int two = 2;
+        final int zero = 0;
         String st;
         char[] star;
         int k = 0;
@@ -146,15 +150,15 @@ class Quiz {
             star = st.toCharArray();
             tokens = st.split(":");
             // System.out.print(tokens[0]);
-            if (tokens.length == 5 && star[0] != ':') {
+            if (tokens.length == five && star[0] != ':') {
                 choice = tokens[1].split(",");
                 correctAnswer = Integer.parseInt(tokens[2]);
-                if (choice.length >= 2) {
+                if (choice.length >= two) {
                     if (correctAnswer <= tokens.length) {
                         maxMarks = Integer.parseInt(tokens[3]);
-                        if (maxMarks >= 0) {
+                        if (maxMarks >= zero) {
                             penalityMarks = Integer.parseInt(tokens[4]);
-                            if (penalityMarks <= 0) {
+                            if (penalityMarks <= zero) {
                                 questions[size] = new Question();
                                 questions[size].addQuestion(
                                     tokens[0], choice, correctAnswer,
@@ -175,7 +179,7 @@ class Quiz {
                     } else {
                         System.out.println(
                             "Error! Correct answer choice number is out of"
-                            + "range for question text 1");
+                            + " range for question text 1");
                         k++;
                         break;
                     }
@@ -191,7 +195,7 @@ class Quiz {
                 break;
             }
         }
-        if (k == 0) {
+        if (k == zero) {
             System.out.println(
                 String.valueOf(questionCount) 
                 + " are added to the quiz");
@@ -204,7 +208,8 @@ class Quiz {
      * @param      choiceCount  The choice count
      */
     public void readChoice(final Scanner s, final int choiceCount) {
-        if (size != 0) {
+        final int zero = 0;
+        if (size != zero) {
             String choice;
             String t;
             for (int i = 0 ; i < choiceCount; i++) {
@@ -222,11 +227,12 @@ class Quiz {
      * { Printing Report }.
      */
     public void report() {
-        if (size != 0) {
+        final int zero = 0;
+        if (size != zero) {
             int sc = 0;
             for (int i = 0; i < size; i++) {
                 System.out.println(questions[i].getQuestion());
-                if (score[i] > 0) {
+                if (score[i] > zero) {
                     System.out.print(
                         " Correct Answer! - Marks Awarded: ");
                     System.out.print(String.valueOf(
