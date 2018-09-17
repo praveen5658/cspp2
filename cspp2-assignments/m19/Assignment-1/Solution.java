@@ -228,9 +228,11 @@ class Question {
         String s = questionText;
         s += "(" + (String.valueOf(this.maxMarks)) + ")";
         s += '\n';
-        for (int j = 0; j < choice.length; j++) {
+        int j = 0;
+        for (j = 0; j < choice.length - 1; j++) {
             s += choice[j] + "\t";
         }
+        s += choice[j];
         return s;
     }
     public String getQuestion() {
