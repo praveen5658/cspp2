@@ -156,6 +156,6 @@ public class Distance {
 		// System.out.println(val);
 		// System.out.println(norm());
 		// System.out.println(Math.sqrt(k));
-		return Math.acos(val / (norm() * Math.sqrt(k)));
+		return (val / (norm() * Math.sqrt(k)));
 	}
 }
