@@ -5,11 +5,11 @@ import java.util.Scanner;
 /**
  * { item_description }.
  */
-import java.io.*;
+import java.io.File;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -27,6 +27,7 @@ public class Solution {
             String input = scan.nextLine();
             File dir = new File(input);
             File[] files = dir.listFiles();
+            final int hundred = 100;
             if (files.length == 0) {
                 System.out.println("empty directory");
             } else {
@@ -48,14 +49,14 @@ public class Solution {
                     for (File secondfile : files) {
                         map2 = new Distance(secondfile);
                         ans = map1.angle(map2.getMap());
-                        if (Math.round(ans * 100) > maxval
+                        if (Math.round(ans * hundred) > maxval
                                 && !firstfile.getName().equals(
                                     secondfile.getName())) {
-                            maxval = Math.round(ans * 100);
+                            maxval = Math.round(ans * hundred);
                             file1 = firstfile.getName();
                             file2 = secondfile.getName();
                         }
-                        System.out.print(Math.round(ans * 100) + "\t\t");
+                        System.out.print(Math.round(ans * hundred) + "\t\t");
                     }
                     System.out.print("\n");
                 }
