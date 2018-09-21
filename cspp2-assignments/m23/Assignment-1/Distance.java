@@ -72,7 +72,8 @@ public class Distance {
 				sam = scan.nextLine();
 				sampletextfile = sam.toLowerCase();
 				// str += sampletextfile;
-				tokens = sampletextfile.split("\\W");
+				sampletextfile = sampletextfile.replaceAll("[^a-zA-Z0-9_]", " ");
+				tokens = sampletextfile.split(" ");
 				for (int i = 0; (i < tokens.length); i++) {
 					if (tokens[i].length() > 0) {
 						hashset.add(tokens[i]);
