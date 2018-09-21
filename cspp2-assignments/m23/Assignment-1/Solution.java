@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 import java.io.File;
 /**
- * Class for solution.
+ * Class for hello solution.
  */
 public final class Solution {
     /**
