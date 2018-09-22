@@ -192,7 +192,7 @@ class Todoist {
 	}
 	public Task getNextTask(final String na) {
 		Task sample;
-		for (int i = 0; i < tasks.length; i++) {
+		for (int i = 0; i < size; i++) {
 			if ((tasks[i].getName().equals(na)) && (tasks[i].getStatus().equals("todo"))) {
 				sample = tasks[i];
 				if ((sample.getImportant().equals("Important")) && (sample.getUrgent().equals("Not Urgent"))) {
@@ -200,7 +200,7 @@ class Todoist {
 				}
 			}
 		}
-		for (int i = 0; i < tasks.length; i++) {
+		for (int i = 0; i < size; i++) {
 			if ((tasks[i].getName().equals(na)) && (tasks[i].getStatus().equals("todo"))) {
 				sample = tasks[i];
 				if ((sample.getImportant().equals("Important")) && (sample.getUrgent().equals("Urgent"))) {
@@ -220,7 +220,7 @@ class Todoist {
 		Task sample;
 		Task[] sample1 = new Task[cou];
 		int k = 0;
-		for (int i = 0; i < tasks.length; i++) {
+		for (int i = 0; i < size; i++) {
 			if ((tasks[i].getName().equals(na)) && (tasks[i].getStatus().equals("todo"))) {
 				sample = tasks[i];
 				if ((sample.getImportant().equals("Important")) && (sample.getUrgent().equals("Not Urgent"))) {
@@ -233,7 +233,7 @@ class Todoist {
 			}
 		}
 		if (k < 3) {
-			for (int i = 0; i < tasks.length; i++) {
+			for (int i = 0; i < size; i++) {
 				if ((tasks[i].getName().equals(na)) && (tasks[i].getStatus().equals("todo"))) {
 					sample = tasks[i];
 					if ((sample.getImportant().equals("Important")) && (sample.getUrgent().equals("Urgent"))) {
