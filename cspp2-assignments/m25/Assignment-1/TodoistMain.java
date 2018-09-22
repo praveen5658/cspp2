@@ -9,7 +9,12 @@ import java.util.Arrays;
  * Class for todoist main.
  */
 public class TodoistMain {
+	/**
+	 * Constructs the object.
+	 */
+	private TodoistMain() {
 
+	}
 	/**
 	 * Starts a test.
 	 */
@@ -19,7 +24,7 @@ public class TodoistMain {
 		String st;
 		while (s.hasNext()) {
 			st = s.nextLine();
-			st = st.replaceAll(",,",",notitle,");
+			st = st.replaceAll(",,", ",notitle,");
 			String[] tokens = st.split(",");
 			switch (tokens[0]) {
 			case "task":
@@ -54,7 +59,8 @@ public class TodoistMain {
 	 * @param      todo    The todo
 	 * @param      tokens  The tokens
 	 */
-	public static void testAddTask(final Todoist todo, final String[] tokens) {
+	public static void testAddTask(final Todoist todo,
+	                               final String[] tokens) {
 		try {
 			todo.addTask(createTask(tokens));
 		} catch (Exception e) {
@@ -92,7 +98,8 @@ public class TodoistMain {
 		boolean urgent = tokens[5].equals("y");
 		String status = tokens[6];
 		return new Task(
-		           title, assignedTo, timeToComplete, important, urgent, status);
+		           title, assignedTo, timeToComplete,
+		           important, urgent, status);
 	}
 
 	/**
@@ -104,16 +111,51 @@ public class TodoistMain {
 		startTest();
 	}
 }
+/**
+ * Class for task.
+ */
 class Task {
+	/**
+	 * Value.
+	 */
 	private String title;
+	/**
+	 * Value.
+	 */
 	private String assignedTo;
+	/**
+	 * Value.
+	 */
 	private int timeToComplete;
+	/**
+	 * Value.
+	 */
 	private String important;
+	/**
+	 * Value.
+	 */
 	private String urgent;
+	/**
+	 * Value.
+	 */
 	private String status;
+	/**
+	 * Value.
+	 */
 	private int c = 0;
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      t     { parameter_description }
+	 * @param      n     { parameter_description }
+	 * @param      d     { parameter_description }
+	 * @param      i     { parameter_description }
+	 * @param      u     { parameter_description }
+	 * @param      sta   The sta
+	 */
 	Task(final String t, final String n, final int d,
-	     final boolean i, final boolean u, final String sta) throws Exception {
+	     final boolean i, final boolean u,
+	     final String sta) throws Exception {
 		if (!(t.equals("notitle"))) {
 			title = t;
 			assignedTo = n;
@@ -144,6 +186,11 @@ class Task {
 			c++;
 		}
 	}
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		String st = "";
 		if (c == 0) {
@@ -153,38 +200,90 @@ class Task {
 		}
 		return st;
 	}
+	/**
+	 * Gets the name.
+	 *
+	 * @return     The name.
+	 */
 	public String getName() {
 		return assignedTo;
 	}
+	/**
+	 * Gets the important.
+	 *
+	 * @return     The important.
+	 */
 	public String getImportant() {
 		return important;
 	}
+	/**
+	 * Gets the urgent.
+	 *
+	 * @return     The urgent.
+	 */
 	public String getUrgent() {
 		return urgent;
 	}
+	/**
+	 * Gets the status.
+	 *
+	 * @return     The status.
+	 */
 	public String getStatus() {
 		return status;
 	}
+	/**
+	 * Gets the time.
+	 *
+	 * @return     The time.
+	 */
 	public int getTime() {
 		return timeToComplete;
 	}
 }
+/**
+ * Class for todoist.
+ */
 class Todoist {
+	/**
+	 * Value.
+	 */
 	private Task[] tasks;
+	/**
+	 * Value.
+	 */
 	private int size;
-	Todoist() {
-		tasks = new Task[10];
+	/**
+	 * Constructs the object.
+	 */
+	protected Todoist() {
+		final int ten = 10;
+		tasks = new Task[ten];
 		size = 0;
 	}
+	/**
+	 * { Resize }.
+	 */
 	public void resize() {
-		tasks = Arrays.copyOf(tasks, 2 * tasks.length);
+		final int two = 2;
+		tasks = Arrays.copyOf(tasks, two * tasks.length);
 	}
+	/**
+	 * Adds a task.
+	 *
+	 * @param      task  The task
+	 */
 	public void addTask(final Task task) {
 		if (tasks.length == size) {
 			resize();
 		}
 		tasks[size++] = task;
 	}
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		String str = "";
 		for (int i = 0; i < size - 1; i++) {
@@ -193,73 +292,96 @@ class Todoist {
 		str += tasks[size - 1].toString();
 		return str;
 	}
+	/**
+	 * Gets the next task.
+	 *
+	 * @param      na    { parameter_description }
+	 *
+	 * @return     The next task.
+	 */
 	public Task getNextTask(final String na) {
 		Task sample;
 		for (int i = 0; i < size; i++) {
-			if ((tasks[i].getName().equals(na)) && (tasks[i].getStatus().equals("todo"))) {
+			if ((tasks[i].getName().equals(na)) && (
+			            tasks[i].getStatus().equals("todo"))) {
 				sample = tasks[i];
-				if ((sample.getImportant().equals("Important")) && (sample.getUrgent().equals("Not Urgent"))) {
+				if ((sample.getImportant().equals("Important")) && (
+				            sample.getUrgent().equals("Not Urgent"))) {
 					return sample;
 				}
 			}
 		}
 		for (int i = 0; i < size; i++) {
-			if ((tasks[i].getName().equals(na)) && (tasks[i].getStatus().equals("todo"))) {
+			if ((tasks[i].getName().equals(na)) && (
+			            tasks[i].getStatus().equals("todo"))) {
 				sample = tasks[i];
-				if ((sample.getImportant().equals("Important")) && (sample.getUrgent().equals("Urgent"))) {
+				if ((sample.getImportant().equals("Important")) && (
+				            sample.getUrgent().equals("Urgent"))) {
 					return sample;
 				}
 			}
 		}
 		return null;
 	}
+	/**
+	 * Gets the next task.
+	 *
+	 * @param      na    { parameter_description }
+	 * @param      cou   The cou
+	 *
+	 * @return     The next task.
+	 */
 	public Task[] getNextTask(final String na, final int cou) {
-		// Task[] samp = new Task[cou];
-		// for (int i = 0; i< cou ; i++) {
-		// 	if (getNextTask(na) != null) {
-		// 		samp[i] =
-		// 	}
-		// }
 		Task sample;
 		Task[] sample1 = new Task[cou];
+		final int three = 3;
 		int k = 0;
 		for (int i = 0; i < size; i++) {
-			if ((tasks[i].getName().equals(na)) && (tasks[i].getStatus().equals("todo"))) {
+			if ((tasks[i].getName().equals(na)) && (
+			            tasks[i].getStatus().equals("todo"))) {
 				sample = tasks[i];
-				if ((sample.getImportant().equals("Important")) && (sample.getUrgent().equals("Not Urgent"))) {
+				if ((sample.getImportant().equals("Important")) && (
+				            sample.getUrgent().equals("Not Urgent"))) {
 					sample1[k] = sample;
 					k++;
-					if (k == 3) {
+					if (k == three) {
 						break;
 					}
 				}
 			}
 		}
-		if (k < 3) {
+		if (k < three) {
 			for (int i = 0; i < size; i++) {
-				if ((tasks[i].getName().equals(na)) && (tasks[i].getStatus().equals("todo"))) {
+				if ((tasks[i].getName().equals(na)) && (
+				            tasks[i].getStatus().equals("todo"))) {
 					sample = tasks[i];
-					if ((sample.getImportant().equals("Important")) && (sample.getUrgent().equals("Urgent"))) {
+					if ((sample.getImportant().equals("Important")) && (
+					            sample.getUrgent().equals("Urgent"))) {
 						sample1[k] = sample;
 						k++;
-						if (k == 3) {
+						if (k == three) {
 							break;
 						}
 					}
 				}
 			}
 		}
-		if (k < 3) {
-			while (k < 3) {
+		if (k < three) {
+			while (k < three) {
 				sample1[k] = null;
 				k++;
 			}
 		}
 		return sample1;
 	}
+	/**
+	 * { Sum of time}.
+	 *
+	 * @return     { description_of_the_return_value }.
+	 */
 	public int totalTime4Completion() {
 		int sum = 0;
-		for (int i = 0; i< size;i++) {
+		for (int i = 0; i < size; i++) {
 			if (tasks[i].getStatus().equals("todo")) {
 				sum += tasks[i].getTime();
 			}
