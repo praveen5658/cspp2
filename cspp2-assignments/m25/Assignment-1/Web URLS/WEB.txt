@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/7380231/manually-throw-an-exception
+https://www.geeksforgeeks.org/arrays-copyof-in-java-with-examples/
