@@ -184,10 +184,10 @@ class Todoist {
 	}
 	public String toString() {
 		String str = "";
-		for (int i = 0; i < tasks.length - 1; i++) {
+		for (int i = 0; i < size - 1; i++) {
 			str += tasks[i].toString() + "\n";
 		}
-		str += tasks[tasks.length - 1].toString();
+		str += tasks[size - 1].toString();
 		return str;
 	}
 	public Task getNextTask(final String na) {
