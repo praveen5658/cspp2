@@ -19,7 +19,7 @@ public class TodoistMain {
 		String st;
 		while (s.hasNext()) {
 			st = s.nextLine();
-			st.replaceAll(",,",",null,");
+			st.replaceAll(",,",",notitle,");
 			String[] tokens = st.split(",");
 			switch (tokens[0]) {
 			case "task":
@@ -114,7 +114,7 @@ class Task {
 	private int c = 0;
 	Task(final String t, final String n, final int d,
 	     final boolean i, final boolean u, final String sta) throws Exception {
-		if (t != "") {
+		if (t != "notitle") {
 			title = t;
 			assignedTo = n;
 			if (d >= 0) {
