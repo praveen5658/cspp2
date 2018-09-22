@@ -16,8 +16,11 @@ public class TodoistMain {
 	public static void startTest() {
 		Todoist todo = new Todoist();
 		Scanner s = new Scanner(System.in);
+		String st;
 		while (s.hasNext()) {
-			String[] tokens = s.nextLine().split(",");
+			st = s.nextLine();
+			st.replaceAll(",,",",null,");
+			String[] tokens = st.split(",");
 			switch (tokens[0]) {
 			case "task":
 				testTask(tokens);
