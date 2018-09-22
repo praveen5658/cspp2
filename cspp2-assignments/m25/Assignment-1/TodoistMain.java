@@ -111,7 +111,7 @@ class Task {
 	private int c = 0;
 	Task(final String t, final String n, final int d,
 	     final boolean i, final boolean u, final String sta) throws Exception {
-		if (t != null) {
+		if (t != "") {
 			title = t;
 			assignedTo = n;
 			if (d >= 0) {
