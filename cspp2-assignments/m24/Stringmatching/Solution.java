@@ -80,7 +80,7 @@ public final class Solution {
                         dr = input1.length() + input2.length();
                         if (i != j) {
                             arr[i][j] = (double)
-                                        Math.round((nr/(double)dr) * hundred);
+                                        Math.round((nr / (double) dr) * hundred);
                             if (maxval < arr[i][j]) {
                                 maxval = arr[i][j];
                                 file1 = files[i].getName();
