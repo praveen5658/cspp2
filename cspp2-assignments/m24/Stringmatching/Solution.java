@@ -39,7 +39,8 @@ public final class Solution {
 				for (int i = 0; i < files.length - 1; i++) {
 					System.out.print(files[i].getName() + "    ");
 				}
-				System.out.print(files[files.length - 1].getName() + " \n");
+				System.out.print(
+				    files[files.length - 1].getName() + " \n");
 				String input1 = "";
 				String input2 = "";
 				String sub = "";
@@ -48,7 +49,8 @@ public final class Solution {
 				Scanner scan;
 				int nr = 0;
 				int dr = 0;
-				double[][] arr = new double[files.length][files.length];
+				double[][] arr =
+				    new double[files.length][files.length];
 				for (int i = 0; i < files.length; i++) {
 					scan = new Scanner(files[i]);
 					input1 = "";
@@ -75,7 +77,8 @@ public final class Solution {
 						nr = finalsub.length() * 2;
 						dr = input1.length() + input2.length();
 						if (i != j) {
-							arr[i][j] = (double)Math.round((nr / (double)dr) * 100);
+							arr[i][j] = (double)
+							            Math.round((nr / (double)dr) * 100);
 							if (maxval < arr[i][j]) {
 								maxval = arr[i][j];
 								file1 = files[i].getName();
@@ -112,12 +115,14 @@ public final class Solution {
 					}
 					System.out.print(arr[files.length - 1][k] + "    ");
 				}
-				space = String.valueOf(arr[files.length - 1][files.length - 1]).length();
+				space = String.valueOf(
+				            arr[files.length - 1][files.length - 1]).length();
 				space = 9 - space;
 				for (int m = 0; m < space; m++) {
 					System.out.print(" ");
 				}
-				System.out.print(arr[files.length - 1][files.length - 1] + " \n");
+				System.out.print(
+				    arr[files.length - 1][files.length - 1] + " \n");
 				System.out.println("Maximum similarity is between "
 				                   + file1 + " and " + file2);
 			}
