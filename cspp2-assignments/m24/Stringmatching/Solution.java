@@ -76,8 +76,9 @@ public final class Solution {
                 			input2 += scan.nextLine();
                 		}
                 		for (int d = 0;d<input1.length();d++) {
-                			for (int f = d; f < input2.length(); f++) {
+                			for (int f = d+1; f < input1.length(); f++) {
                 				sub = input1.substring(d, f);
+                				// System.out.println(sub);
                 				if (input2.contains(sub)) {
                 					if (finalsub.length() < sub.length()) {
                 						finalsub = sub;
@@ -85,7 +86,12 @@ public final class Solution {
                 				}
                 			}
                 		}
-                		arr[i][j] = (double)Math.round((finalsub.length() * 2)/(input1.length() + input2.length()));
+                		arr[i][j] = (double)Math.round((finalsub.length() * 2)/(input1.length() + input2.length()) * 100);
+                		// System.out.println(finalsub);
+                		// System.out.println(input1);
+                		// System.out.println(finalsub.length());
+                		// System.out.println(input1.length());
+                		// System.out.println(input2.length());
                 		System.out.println(arr[i][j]);
                 	}
                 }
