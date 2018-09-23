@@ -80,29 +80,31 @@ public final class Solution {
                         dr = input1.length() + input2.length();
                         if (i != j) {
                             arr[i][j] = (double)
-                                        Math.round((nr / (double)dr) * 100);
+                                        Math.round((nr /(double)dr) * hundred);
                             if (maxval < arr[i][j]) {
                                 maxval = arr[i][j];
                                 file1 = files[i].getName();
                                 file2 = files[j].getName();
                             }
                         } else {
+                            final double hun = 100.0;
                             arr[i][j] = 100.0;
                         }
                     }
                 }
+                final int nine = 9;
                 for (int i = 0; i < files.length - 1; i++) {
                     System.out.print(files[i].getName() + "    ");
                     for (int k = 0; k < files.length - 1; k++) {
                         space = String.valueOf(arr[i][k]).length();
-                        space = 9 - space;
+                        space = nine - space;
                         for (int m = 0; m < space; m++) {
                             System.out.print(" ");
                         }
                         System.out.print(arr[i][k] + "    ");
                     }
                     space = String.valueOf(arr[i][files.length - 1]).length();
-                    space = 9 - space;
+                    space = nine - space;
                     for (int m = 0; m < space; m++) {
                         System.out.print(" ");
                     }
@@ -111,7 +113,7 @@ public final class Solution {
                 System.out.print(files[files.length - 1].getName() + "    ");
                 for (int k = 0; k < files.length - 1; k++) {
                     space = String.valueOf(arr[files.length - 1][k]).length();
-                    space = 9 - space;
+                    space = nine - space;
                     for (int m = 0; m < space; m++) {
                         System.out.print(" ");
                     }
@@ -119,7 +121,7 @@ public final class Solution {
                 }
                 space = String.valueOf(
                             arr[files.length - 1][files.length - 1]).length();
-                space = 9 - space;
+                space = nine - space;
                 for (int m = 0; m < space; m++) {
                     System.out.print(" ");
                 }
